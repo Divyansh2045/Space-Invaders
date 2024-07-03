@@ -1,16 +1,18 @@
+/* class Player {
 
-#include <iostream>
-using namespace std;
-#include <SFML/Graphics.hpp>
+private:
+    int playerScore = 0;
+    int health = 1;
+    int movementSpeed = 10;
+    sf::Vector2f position = sf::Vector2f(300.0f, 450.0f);
 
-int main (){
 
-    GameService* gameservice = new GameService();
-    gameservice->ignite();
+public:
+    sf::Texture playershiptexture;
+    sf::Sprite playershipsprite;
 
-    while (gameservice->isRunning())
+    int getScore()
     {
-<<<<<<< Updated upstream
         return playerScore;
     }
     void setScore(int newScore) {
@@ -44,7 +46,7 @@ int main (){
     }
 
 
-   
+
 };  */
 
 int main()
@@ -55,13 +57,13 @@ int main()
     Player player;
 
     player.playershiptexture.loadFromFile("assets/textures/player_ship.png");
-   
+
     player.playershipsprite.setTexture(player.playershiptexture);                                // sprite.setTexture(texture);
     // set position, rotation, scale and more
 
    // player.playershipsprite.setPosition(300, 450);
     player.playershipsprite.setRotation(0);
-    player.playershipsprite.setScale(1, 1); 
+    player.playershipsprite.setScale(1, 1);
     cout << "Player score is " << player.getScore() << endl;;
     player.setScore(100);
     cout <<"New player score: "<<player.getScore() << endl;
@@ -100,13 +102,4 @@ int main()
 
 
     } */
-
-=======
-        gameservice->update();
-        gameservice->render();
-    }
-
-
->>>>>>> Stashed changes
-    return 0;
 }
