@@ -2,6 +2,7 @@
 #include "../HeaderFiles/GameService.h"
 #include <iostream>
 #include "../HeaderFiles/GraphicService.h"
+#include "../HeaderFiles/EventService.h"
 
 
 
@@ -10,6 +11,7 @@ class ServiceLocator {
 private:
 	GraphicService* graphic_service{ nullptr };
 	static ServiceLocator* instance;
+	EventService* event_service{ nullptr };
 
 	ServiceLocator();
 
@@ -27,6 +29,7 @@ public:
 
 	// Methods to Get Specific Services: 
 	GraphicService* GetGraphicService();
+	EventService* GetEventService();
 
 };
 

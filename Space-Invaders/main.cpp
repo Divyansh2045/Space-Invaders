@@ -2,59 +2,20 @@
 #include <iostream>
 using namespace std;
 #include <SFML/Graphics.hpp>
+#include "HeaderFiles/GameService.h"
 
-int main (){
+int main() {
+    GameService* game_service = new GameService();
+   // EventService* event_service = new EventService();
 
-    GameService* gameservice = new GameService();
-    gameservice->ignite();
+    game_service->ignite();
 
-    while (gameservice->isRunning())
+    while (game_service->isRunning())
     {
-<<<<<<< Updated upstream
-        return playerScore;
+        game_service->update();
+        game_service->render();
+
     }
-    void setScore(int newScore) {
-        playerScore = newScore;
-    }
-    int getMoveSpeed()
-    {
-        return movementSpeed;
-    }
-    void setMoveSpeed(int newMoveSpeed)
-    {
-        movementSpeed = newMoveSpeed;
-    }
-
-    void takeDamage() {
-
-        cout << "Player took damage" << endl;
-    };
-
-    void move(float offsetX) {
-        position.x += offsetX;
-    };
-
-    void shootBullets() {
-        cout << "Player is shooting bullets" << endl;
-    };
-
-    sf::Vector2f getPosition()
-    {
-        return position;
-    }
-
-
-   
-};  */
-
-int main()
-{
-   
-        gameservice->update();
-        gameservice->render();
-    }
-
-
->>>>>>> Stashed changes
-    return 0;
 }
+
+

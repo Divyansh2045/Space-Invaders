@@ -133,17 +133,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-<<<<<<< Updated upstream
-=======
+    <ClCompile Include="Source\EventService.cpp" />
     <ClCompile Include="Source\GameService.cpp" />
     <ClCompile Include="Source\GraphicService.cpp" />
     <ClCompile Include="Source\ServiceLocator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HeaderFiles\EventService.h" />
     <ClInclude Include="HeaderFiles\GameService.h" />
     <ClInclude Include="HeaderFiles\GraphicService.h" />
     <ClInclude Include="HeaderFiles\ServiceLocator.h" />
->>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

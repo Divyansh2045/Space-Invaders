@@ -10,7 +10,7 @@ GraphicService::GraphicService() {
 	videomode = nullptr;  // Initializes video mode pointer to null
 }
 GraphicService::~GraphicService() {
-	//OnDestroy(); // Calls onDestroy method to clean up resources
+	OnDestroy(); // Calls onDestroy method to clean up resources
 }
 void GraphicService::initialize() {
 	gamewindow = CreateGameWindow(); // Assigns a new game window to the game_window pointer

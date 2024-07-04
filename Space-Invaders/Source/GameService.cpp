@@ -34,6 +34,7 @@ using namespace std;
 
 	void GameService::update() //Updates the game objects each frame 
 	{
+		service_locator->GetEventService()->processEvents();
 		service_locator->update();
 	}
 	void GameService::ignite(){ // Initiates the game 
