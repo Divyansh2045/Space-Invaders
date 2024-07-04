@@ -32,5 +32,3 @@
     <ClInclude Include="HeaderFiles\ServiceLocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-</Project>

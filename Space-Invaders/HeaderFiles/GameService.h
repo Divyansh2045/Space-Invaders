@@ -1,11 +1,18 @@
 #pragma once
+#include <SFML/Graphics.hpp>
+#include"../HeaderFiles/ServiceLocator.h"
 
-class GameService
-{
+class ServiceLocator;
+
+class GameService {
 private:
+
+	ServiceLocator* service_locator{ nullptr };
+	 sf::RenderWindow* game_window{ nullptr };
 	void initialize(); // Handle game initialization
 	void destroy(); // Destroys unneeded objects
-	void iz();
+	void initializeVariables();
+
 
 public:
 	GameService(); // Default Constructor 
@@ -14,6 +21,7 @@ public:
 	void ignite(); // initiates the game
 	void render(); //Rendering the next frame
 	bool isRunning(); //check if the game is currently running
+
 
      
 };
