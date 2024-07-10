@@ -1,7 +1,9 @@
 #pragma once
+
 #include <iostream>
-#include <SFML/Graphics.hpp>
 using namespace std;
+#include <SFML/Graphics.hpp>
+
 
 
 
@@ -10,9 +12,12 @@ class GraphicService {
 private:
 
 	const string gamewindowtitle = "SPACE INVADERS";
+
 	const int gamewindowheight = 800;
 	const int gamewindowwidth = 600;
+
 	const sf::Color gamewindowcolor = sf::Color::Blue;
+
 	sf::VideoMode* videomode{ nullptr }; // ptr to video mode
 	sf::RenderWindow* gamewindow{ nullptr }; //pointer to renderwindow : we have created an object using pointers to manually delete the said object and pointer. 
 

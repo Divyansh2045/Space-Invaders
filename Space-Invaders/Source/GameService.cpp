@@ -1,9 +1,6 @@
 #include <iostream>
-#include "../HeaderFiles/GameService.h"
 using namespace std;
-//#include "../HeaderFiles/ServiceLocator.h"
-
-#include "../HeaderFiles/GraphicService.h"
+#include "../HeaderFiles/GameService.h"
 
 
 	void GameService::initialize() // initialization of game 
@@ -14,7 +11,7 @@ using namespace std;
 	}
 	void GameService::destroy() // Destroys game objects when destroyed 
 	{
-
+		delete(game_window);
 	}
 	void GameService::initializeVariables() {
 		game_window = service_locator->GetGraphicService()->GetGameWindow(); //set game window (it was null before this)
@@ -48,7 +45,7 @@ using namespace std;
 		game_window->display();
 
 	}
-	bool GameService::isRunning()  // Keeps on checking if the game is running
+	bool GameService::isRunning() // Keeps on checking if the game is running
 	{
 
 		return game_window ->isOpen();
