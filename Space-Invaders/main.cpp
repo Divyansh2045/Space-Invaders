@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 #include <SFML/Graphics.hpp>
+#include "HeaderFiles/GameService.h"
 
 int main() {
     GameService* game_service = new GameService();
@@ -17,4 +18,4 @@ int main() {
     }
 }
 
-\
+

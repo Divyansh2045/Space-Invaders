@@ -18,8 +18,9 @@ using namespace std;
 	{
 		gameWindow = ServiceLocator::getInstance()->GetGraphicService()->GetGameWindow();
 	}
-	void EventService::update() {
-
+	void EventService::update() 
+	{
+		processEvents();
 	}
 	void EventService::processEvents()
 	{
