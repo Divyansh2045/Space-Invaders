@@ -4,6 +4,7 @@
 #include "../HeaderFiles/GraphicService.h"
 #include "../HeaderFiles/EventService.h"
 #include "../HeaderFiles/PlayerService.h"
+#include "../HeaderFiles/TimeService.h"
 
 
 
@@ -14,6 +15,7 @@ private:
 	static ServiceLocator* instance;
 	EventService* event_service{ nullptr };
 	PlayerService* player_service{ nullptr };
+	TimeService* time_service{ nullptr };
 
 	ServiceLocator();
 
@@ -33,6 +35,7 @@ public:
 	GraphicService* GetGraphicService();
 	EventService* GetEventService();
 	PlayerService* GetPlayerService();
+	TimeService* GetTimeService();
 
 };
 

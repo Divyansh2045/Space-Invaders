@@ -9,6 +9,7 @@ ServiceLocator::ServiceLocator(){
 	graphic_service = nullptr;
 	event_service = nullptr;
 	player_service = nullptr;
+	time_service = nullptr;
 	createServices();
 }
 ServiceLocator::~ServiceLocator() {
@@ -25,12 +26,14 @@ void ServiceLocator::initialize(){
 	graphic_service->initialize();
 	event_service->initialize();
 	player_service->initialize();
+	time_service->initialize();
 }
 void ServiceLocator::update() {
 	//Keeps on updating services required and updates the game state
 	graphic_service->update();
 	event_service->update();
 	player_service->update();
+	time_service->update();
 }
 void ServiceLocator::render() {
 	//Keeps on rendering the new services
@@ -42,6 +45,7 @@ void ServiceLocator::createServices() {
 	graphic_service = new GraphicService();
 	event_service = new EventService();
 	player_service = new PlayerService();
+	time_service = new TimeService();
 }
 void ServiceLocator::clearAllServices() {
 	delete(graphic_service); // Delete the graphic_service instance
@@ -50,12 +54,15 @@ void ServiceLocator::clearAllServices() {
 	event_service = nullptr;
 	delete (player_service);
 	player_service = nullptr;
+	delete(time_service);
+	time_service = nullptr;
 }
 
 // Returns a pointer to the currently set graphic service.
 GraphicService* ServiceLocator::GetGraphicService() { return graphic_service; }
 EventService* ServiceLocator::GetEventService() { return event_service; }
 PlayerService* ServiceLocator::GetPlayerService() { return player_service; }
+TimeService* ServiceLocator::GetTimeService() { return time_service; }
 
  //ServiceLocator:: static ServiceLocator* getInstance() {
 
