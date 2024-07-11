@@ -1,6 +1,7 @@
 #include "../HeaderFiles/PlayerService.h"
 #include "../HeaderFiles/ServiceLocator.h"
 
+
 PlayerService::PlayerService()
 {
 	gameWindow = nullptr;
@@ -29,11 +30,11 @@ void PlayerService::processPlayerInput()
 	{
 		if (eventservice->pressedLeftKey())
 		{
-			move(-1.0f * getMoveSpeed());
+			moveLeft();
 		}
 		if (eventservice->pressedRightKey())
 		{
-			move(1.0f * getMoveSpeed());
+			moveRight();
 		}
 	}
 }
@@ -48,8 +49,15 @@ void PlayerService::processPlayerInput()
 	}
 }
 
+ void PlayerService::moveLeft() {
+	position.x -= movementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+ }
+ void PlayerService::moveRight() {
+	 position.x += movementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+ }
+
 void PlayerService::move(float offsetX) {
-	position.x += offsetX;
+	position.x += offsetX * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
 }
 
 //helper functions

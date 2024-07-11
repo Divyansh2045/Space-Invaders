@@ -8,7 +8,7 @@ class PlayerService
 
 private:
 	int health = 3;
-	int movementSpeed = 50;
+	float movementSpeed = 5.0f;
 	int playerScore = 0;
 	sf::Vector2f position = sf::Vector2f(200.0f, 100.0f);
 	
@@ -34,6 +34,8 @@ public:
 	void initialize();
 
 	void move(float offsetX);
+	void moveLeft();
+	void moveRight();
 	int getMoveSpeed();
 	sf::Vector2f getPlayerPosition();
 	//int GetScore() const;
