@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../HeaderFiles/GraphicService.h"
 #include "../HeaderFiles/EventService.h"
+#include "../HeaderFiles/PlayerService.h"
 
 
 
@@ -12,6 +13,7 @@ private:
 	GraphicService* graphic_service{ nullptr };
 	static ServiceLocator* instance;
 	EventService* event_service{ nullptr };
+	PlayerService* player_service{ nullptr };
 
 	ServiceLocator();
 
@@ -30,6 +32,7 @@ public:
 	// Methods to Get Specific Services: 
 	GraphicService* GetGraphicService();
 	EventService* GetEventService();
+	PlayerService* GetPlayerService();
 
 };
 

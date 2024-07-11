@@ -16,10 +16,11 @@ private:
 	
 	sf::Texture player_texture;
 	sf::Sprite player_sprite;
-	sf::RenderWindow* gameWindow();
+	sf::RenderWindow* gameWindow;
 
 	void initializePlayerSprite();
-	void initializePlayerInput();
+
+	void processPlayerInput();
 
 
 
@@ -29,12 +30,14 @@ public:
 	~PlayerService();
 
 	void update();
-	void render();
+	void render(); 
 	void initialize();
 
 	void move(float offsetX);
 	int getMoveSpeed();
-	sf::Vector2f getPosition();
+	sf::Vector2f getPlayerPosition();
+	//int GetScore() const;
+	//void SetScore(int newScore);
 
 
 
