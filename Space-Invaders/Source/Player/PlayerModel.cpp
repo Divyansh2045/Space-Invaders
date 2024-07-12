@@ -32,5 +32,5 @@ bool PlayerModel::getPlayerAlive() {
 }
 
 void PlayerModel::setPlayerAlive(bool alive) {
-	isPlayerAlive = true;
+	isPlayerAlive = alive;
 }
