@@ -9,7 +9,7 @@ class GameService
 private:
 
 	ServiceLocator* service_locator{ nullptr };
-	 sf::RenderWindow* game_window{ nullptr };
+	 sf::RenderWindow* gameWindow{ nullptr };
 
 	void initialize(); // Handle game initialization
 	void destroy(); // Destroys unneeded objects

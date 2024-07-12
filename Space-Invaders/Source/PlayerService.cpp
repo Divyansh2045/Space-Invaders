@@ -16,10 +16,10 @@ void PlayerService::initialize() {
 void PlayerService::update() {
 	processPlayerInput();
 
-	player_sprite.setPosition(getPlayerPosition());
+	playerSprite.setPosition(getPlayerPosition());
 }
 void PlayerService::render() {
-	gameWindow->draw(player_sprite);
+	gameWindow->draw(playerSprite);
 }
 
 void PlayerService::processPlayerInput()
@@ -43,9 +43,9 @@ void PlayerService::processPlayerInput()
  void PlayerService::initializePlayerSprite()
 {
 
-	if (player_texture.loadFromFile(player_texture_path))
+	if (playerTexture.loadFromFile(player_texture_path))
 	{
-		player_sprite.setTexture(player_texture);
+		playerSprite.setTexture(playerTexture);
 	}
 }
 

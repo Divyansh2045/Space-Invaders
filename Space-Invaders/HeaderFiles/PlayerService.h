@@ -14,8 +14,8 @@ private:
 	
 	const sf::String player_texture_path = "assets/textures/player_ship.png";
 	
-	sf::Texture player_texture;
-	sf::Sprite player_sprite;
+	sf::Texture playerTexture;
+	sf::Sprite playerSprite;
 	sf::RenderWindow* gameWindow;
 
 	void initializePlayerSprite();

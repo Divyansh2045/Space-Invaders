@@ -11,16 +11,16 @@ using namespace std;
 	}
 	void GameService::destroy() // Destroys game objects when destroyed 
 	{
-		delete(game_window);
+		delete(gameWindow);
 	}
 	void GameService::initializeVariables() {
-		game_window = service_locator->GetGraphicService()->GetGameWindow(); //set game window (it was null before this)
+		gameWindow = service_locator->GetGraphicService()->GetGameWindow(); //set game window (it was null before this)
 
 	}
 	GameService::GameService() // Default Constructor 
 	{
 		service_locator = nullptr; 
-		game_window = nullptr; // Initializes game window pointer to null
+		gameWindow = nullptr; // Initializes game window pointer to null
 		//gameloop
 	}
 	GameService::~GameService() // Deconstructor
@@ -40,15 +40,15 @@ using namespace std;
 	
 	}
 	void GameService::render() { //Renders each object each frame
-		game_window->clear(service_locator->GetGraphicService()->GetWindowColor());
+		gameWindow->clear(service_locator->GetGraphicService()->GetWindowColor());
 		service_locator->render();
-		game_window->display();
+		gameWindow->display();
 
 	}
 	bool GameService::isRunning() // Keeps on checking if the game is running
 	{
 
-		return game_window ->isOpen();
+		return gameWindow ->isOpen();
 	}
 
 
