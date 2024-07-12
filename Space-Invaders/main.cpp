@@ -14,7 +14,7 @@ int main() {
    {
         game_service->update();
         game_service->render();
-
+        cout << "abcd" << endl;
    }
 }
 

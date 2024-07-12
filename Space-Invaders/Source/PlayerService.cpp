@@ -31,10 +31,12 @@ void PlayerService::processPlayerInput()
 		if (eventservice->pressedLeftKey())
 		{
 			moveLeft();
+			cout << "Player moved left" << endl;
 		}
 		if (eventservice->pressedRightKey())
 		{
 			moveRight();
+			cout << "Player moved right" << endl;
 		}
 	}
 }

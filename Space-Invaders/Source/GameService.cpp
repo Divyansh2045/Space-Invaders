@@ -7,6 +7,7 @@ using namespace std;
 	{
 		service_locator->initialize();
 		initializeVariables();//INitialize variables
+		cout << "initialize" << endl;
 
 	}
 	void GameService::destroy() // Destroys game objects when destroyed 
@@ -33,16 +34,19 @@ using namespace std;
 	{
 		service_locator->GetEventService()->processEvents();
 		service_locator->update();
+		cout << "update" << endl;
 	}
 	void GameService::ignite(){ // Initiates the game 
 		service_locator = ServiceLocator::getInstance();
 		initialize();
+		cout << "ignite" << endl;
 	
 	}
 	void GameService::render() { //Renders each object each frame
 		gameWindow->clear(service_locator->GetGraphicService()->GetWindowColor());
 		service_locator->render();
 		gameWindow->display();
+		cout << "render" << endl;
 
 	}
 	bool GameService::isRunning() // Keeps on checking if the game is running
