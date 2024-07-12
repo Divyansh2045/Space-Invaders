@@ -11,15 +11,16 @@ class GraphicService {
 
 private:
 
-	const string gamewindowtitle = "SPACE INVADERS";
+	const string gameWindowTitle = "SPACE INVADERS";
 
-	const int gamewindowheight = 800;
-	const int gamewindowwidth = 600;
+	const int gameWindowHeight = 800;
+	const int gameWindowWidth = 600;
+	const int frameRate = 60;
 
-	const sf::Color gamewindowcolor = sf::Color::Blue;
+	const sf::Color gameWindowColor = sf::Color::Blue;
 
-	sf::VideoMode* videomode{ nullptr }; // ptr to video mode
-	sf::RenderWindow* gamewindow{ nullptr }; //pointer to renderwindow : we have created an object using pointers to manually delete the said object and pointer. 
+	sf::VideoMode* videoMode{ nullptr }; // ptr to video mode
+	sf::RenderWindow* gameWindow{ nullptr }; //pointer to renderwindow : we have created an object using pointers to manually delete the said object and pointer. 
 
 	void SetVideoMode();  // Method for setting our video mode;
 

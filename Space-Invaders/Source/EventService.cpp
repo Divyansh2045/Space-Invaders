@@ -44,7 +44,7 @@ using namespace std;
 		return (gameEvent.key.code == sf::Keyboard::Escape);
 	}
 	bool EventService::isKeyboardEvent() {
-		return gameEvent.type == sf::Event::KeyPressed;
+		return (gameEvent.type == sf::Event::KeyPressed);
 	}
 	bool EventService::isGameWindowOpen() 
 	{
@@ -55,5 +55,10 @@ using namespace std;
 		return gameEvent.type = sf::Event::Closed;
 	}
 	
-
+	bool EventService::pressedLeftKey() {
+		return (gameEvent.type == sf::Event::KeyPressed);
+	}
+	bool EventService::pressedRightKey() {
+		return (gameEvent.type == sf::Event::KeyPressed);
+	}
 

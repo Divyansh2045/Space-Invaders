@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -136,13 +136,17 @@
     <ClCompile Include="Source\EventService.cpp" />
     <ClCompile Include="Source\GameService.cpp" />
     <ClCompile Include="Source\GraphicService.cpp" />
+    <ClCompile Include="Source\PlayerService.cpp" />
     <ClCompile Include="Source\ServiceLocator.cpp" />
+    <ClCompile Include="Source\TimeService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\EventService.h" />
     <ClInclude Include="HeaderFiles\GameService.h" />
     <ClInclude Include="HeaderFiles\GraphicService.h" />
+    <ClInclude Include="HeaderFiles\PlayerService.h" />
     <ClInclude Include="HeaderFiles\ServiceLocator.h" />
+    <ClInclude Include="HeaderFiles\TimeService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
