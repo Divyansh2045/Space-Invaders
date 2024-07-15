@@ -1,8 +1,8 @@
 #include <iostream>
 #include "../HeaderFiles/GameService.h"
 using namespace std;
-#include "../HeaderFiles/ServiceLocator.h"
 #include "../HeaderFiles/EventService.h"
+#include "../HeaderFiles/GraphicService.h"
 
 
 	EventService::EventService() 
@@ -27,6 +27,7 @@ using namespace std;
 		if (isGameWindowOpen()) {
 			while (gameWindow->pollEvent(gameEvent))
 			{
+				cout << gameEvent.type;
 				if (gameWindowWasClosed() || hasQuitGame())
 				{
 					gameWindow->close();
@@ -37,11 +38,17 @@ using namespace std;
 
 	bool EventService::hasQuitGame()
 	{ // only true if the ESC key is pressed and a keyboard event has been registered
-		return (isKeyboardEvent() && pressedEscapeKey());
+		//return (isKeyboardEvent() && pressedEscapeKey());
+		if (isKeyboardEvent()) {
+			return pressedEscapeKey();
+		}
+
+		return false;
 
 	}
 	bool EventService::pressedEscapeKey() {
 		return (gameEvent.key.code == sf::Keyboard::Escape);
+		
 	}
 	bool EventService::isKeyboardEvent() {
 		return (gameEvent.type == sf::Event::KeyPressed);
@@ -52,13 +59,16 @@ using namespace std;
 	}
 	bool EventService::gameWindowWasClosed() 
 	{
-		return gameEvent.type = sf::Event::Closed;
+		return gameEvent.type == sf::Event::Closed;
 	}
 	
 	bool EventService::pressedLeftKey() {
-		return (gameEvent.type == sf::Event::KeyPressed);
+		
+			return gameEvent.key.code == sf::Keyboard::Left;
+	
 	}
 	bool EventService::pressedRightKey() {
-		return (gameEvent.type == sf::Event::KeyPressed);
+
+		return gameEvent.key.code == sf::Keyboard::Right;
 	}
 

@@ -8,7 +8,7 @@ class PlayerService
 
 private:
 	int health = 3;
-	float movementSpeed = 5.0f;
+	float movementSpeed = 500.0f;
 	int playerScore = 0;
 	sf::Vector2f position = sf::Vector2f(200.0f, 100.0f);
 	

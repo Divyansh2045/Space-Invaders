@@ -31,12 +31,12 @@ void PlayerService::processPlayerInput()
 		if (eventservice->pressedLeftKey())
 		{
 			moveLeft();
-			cout << "Player moved left" << endl;
+		
 		}
 		if (eventservice->pressedRightKey())
 		{
 			moveRight();
-			cout << "Player moved right" << endl;
+		
 		}
 	}
 }
@@ -52,9 +52,11 @@ void PlayerService::processPlayerInput()
 }
 
  void PlayerService::moveLeft() {
+
 	position.x -= movementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
  }
  void PlayerService::moveRight() {
+	 
 	 position.x += movementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
  }
 

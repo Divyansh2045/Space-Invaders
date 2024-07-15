@@ -31,8 +31,6 @@ public:
 	//getters and setters
 	sf::Vector2f getPlayerPosition();
 	void setPlayerPosition(sf::Vector2f position);
-	bool getPlayerAlive();
-	void setPlayerAlive(bool alive);
 
 
 	int getPlayerScore();
