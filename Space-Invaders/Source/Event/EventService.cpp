@@ -1,8 +1,8 @@
 #include <iostream>
-#include "../HeaderFiles/GameService.h"
+#include "../../HeaderFiles/Main/GameService.h"
 using namespace std;
-#include "../HeaderFiles/EventService.h"
-#include "../HeaderFiles/GraphicService.h"
+#include "../../HeaderFiles/Event/EventService.h"
+#include "../../HeaderFiles/Graphic/GraphicService.h"
 
 
 	EventService::EventService() 

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../../HeaderFiles/Player/PlayerController.h"
-#include "../../HeaderFiles/ServiceLocator.h"
-#include "../../HeaderFiles/EventService.h"
+#include "../../HeaderFiles/Global/ServiceLocator.h"
+#include "../../HeaderFiles/Event/EventService.h"
 #include "../../HeaderFiles/Player/PlayerModel.h"
 #include"../../HeaderFiles/Player/PlayerView.h"
 #include <algorithm>

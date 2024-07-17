@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-#include "../HeaderFiles/GameService.h"
-#include "../HeaderFiles/GraphicService.h"
+#include "../../HeaderFiles/Graphic/GraphicService.h"
+#include "../../HeaderFiles/Main/GameService.h"
 
 
 	void GameService::initialize() // initialization of game 

@@ -4,9 +4,6 @@
 using namespace std;
 #include <SFML/Graphics.hpp>
 
-
-
-
 class GraphicService {
 
 private:

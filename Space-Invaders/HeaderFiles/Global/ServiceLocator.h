@@ -1,10 +1,10 @@
 #pragma once
-#include "../HeaderFiles/GameService.h"
+#include "../../HeaderFiles/Main/GameService.h"
 #include <iostream>
-#include "../HeaderFiles/GraphicService.h"
-#include "../HeaderFiles/EventService.h"
-#include "../HeaderFiles/PlayerService.h"
-#include "../HeaderFiles/TimeService.h"
+#include "../../HeaderFiles/Graphic/GraphicService.h"
+#include "../../HeaderFiles/Event/EventService.h"
+#include "../../HeaderFiles/Player/PlayerService.h"
+#include "../../HeaderFiles/Time/TimeService.h"
 
 
 

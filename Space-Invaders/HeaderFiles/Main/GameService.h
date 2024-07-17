@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include"../HeaderFiles/ServiceLocator.h"
+#include "../../HeaderFiles/Global/ServiceLocator.h"
 
 class ServiceLocator;
 
