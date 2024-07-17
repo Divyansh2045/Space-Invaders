@@ -1,7 +1,7 @@
 
 #include <iostream>
 using namespace std;
-#include "HeaderFiles/GameService.h"
+#include "../../HeaderFiles/Main/GameService.h"
 #include <SFML/Graphics.hpp>
 
 int main() {

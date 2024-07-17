@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "../../HeaderFiles/Player/PlayerView.h"
-#include "../../HeaderFiles/ServiceLocator.h"
+#include "../../HeaderFiles/Global/ServiceLocator.h"
 #include "../../HeaderFiles/Player/PlayerController.h"
 
 void PlayerView::initialize() {
