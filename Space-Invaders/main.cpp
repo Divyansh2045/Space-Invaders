@@ -1,8 +1,8 @@
 
 #include <iostream>
 using namespace std;
-#include <SFML/Graphics.hpp>
 #include "HeaderFiles/GameService.h"
+#include <SFML/Graphics.hpp>
 
 int main() {
     GameService* game_service = new GameService();
@@ -14,7 +14,7 @@ int main() {
    {
         game_service->update();
         game_service->render();
-        cout << "abcd" << endl;
+    
    }
 }
 

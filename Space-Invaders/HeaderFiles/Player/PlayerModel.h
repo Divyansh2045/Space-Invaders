@@ -20,7 +20,7 @@ private:
 
 public:
 	
-	const float playerMovementSpeed = 200.0f;
+	const float playerMovementSpeed = 4000.0f;
 	PlayerModel();
 	~PlayerModel();
 
@@ -31,8 +31,6 @@ public:
 	//getters and setters
 	sf::Vector2f getPlayerPosition();
 	void setPlayerPosition(sf::Vector2f position);
-	bool getPlayerAlive();
-	void setPlayerAlive(bool alive);
 
 
 	int getPlayerScore();

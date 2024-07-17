@@ -33,8 +33,8 @@ public:
 	sf::RenderWindow* CreateGameWindow(); //method to create the game window. returns a pointer to an instance of the game window
 
 	void initialize(); //lifecycle functions
-	void update(); //..
-	void render(); //..
+	void update(); 
+	void render(); 
 	bool isGameWindowOpen() const;//check if the window is open
 
 	sf::RenderWindow* GetGameWindow() const;//getter for the game window instance

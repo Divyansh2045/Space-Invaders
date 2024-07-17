@@ -43,5 +43,6 @@ void GraphicService::render() {
 
 }
 bool GraphicService::isGameWindowOpen() const{
+
 	return gameWindow ->isOpen();
 }
