@@ -44,14 +44,10 @@ void PlayerController::ProcessPlayerInput() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		moveLeft();
-		
-		
-
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		moveRight();
-	
 	}
 
 }
@@ -63,7 +59,7 @@ void PlayerController::moveLeft() {
 
 	currentPosition.x = std::max(currentPosition.x, playerModel->leftScreenSide.x);
 	playerModel->setPlayerPosition(currentPosition);
-	cout << "left" << endl;
+
 
 }
 
@@ -73,7 +69,6 @@ void PlayerController::moveRight()  {
 
 	currentPosition.x = std::min(currentPosition.x, playerModel->rightScreenSide.x);
 	playerModel->setPlayerPosition(currentPosition);
-	cout << "right" << endl;
 }
 
 
