@@ -19,7 +19,10 @@ private:
 	int playerScore;
 
 public:
-	
+
+	const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 0.0f);
+	const sf::Vector2f rightScreenSide = sf::Vector2f(700.0f, 0.0f);
+
 	const float playerMovementSpeed = 200.0f;
 	PlayerModel();
 	~PlayerModel();
@@ -39,9 +42,6 @@ public:
 	//new getter and setter
 	PlayerState getPlayerState();
 	void setPlayerState(PlayerState state);
-
-	const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 0.0f);
-	const sf::Vector2f rightScreenSide = sf::Vector2f(700.0f, 0.0f);
 
 
 

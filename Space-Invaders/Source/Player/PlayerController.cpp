@@ -15,6 +15,47 @@ PlayerController::~PlayerController() {
 	delete (playerModel);
 }
 
+void PlayerController::initialize() {
+
+	playerModel->initialize();
+	playerView->initialize(this);
+	cout << "initalzie";
+
+}
+
+void PlayerController::update() {
+
+	playerView->update();
+	ProcessPlayerInput();
+	
+}
+
+void PlayerController::render() {
+	playerView->render();
+
+}
+sf::Vector2f PlayerController::getPlayerPosition() {
+	return playerModel->getPlayerPosition();
+}
+
+
+void PlayerController::ProcessPlayerInput() {
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		moveLeft();
+		
+		
+
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		moveRight();
+	
+	}
+
+}
+
 void PlayerController::moveLeft() {
 
 	sf::Vector2f currentPosition = playerModel->getPlayerPosition();
@@ -22,6 +63,7 @@ void PlayerController::moveLeft() {
 
 	currentPosition.x = std::max(currentPosition.x, playerModel->leftScreenSide.x);
 	playerModel->setPlayerPosition(currentPosition);
+	cout << "left" << endl;
 
 }
 
@@ -31,41 +73,10 @@ void PlayerController::moveRight()  {
 
 	currentPosition.x = std::min(currentPosition.x, playerModel->rightScreenSide.x);
 	playerModel->setPlayerPosition(currentPosition);
+	cout << "right" << endl;
 }
 
-void PlayerController::ProcessPlayerInput(){
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-		moveLeft();
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	{
-		moveRight();
-	}
-
-}
-void PlayerController::initialize() {
-
-	playerModel->initialize();
-	playerView->initialize(this);
 
 
-}
 
-void PlayerController::update() {
-
-	playerView->update();
-
-
-}
-
-void PlayerController::render() {
-	playerView->render();
-
-}
-
-sf::Vector2f PlayerController::getPlayerPosition() {
-	return playerModel->getPlayerPosition();
-}
 

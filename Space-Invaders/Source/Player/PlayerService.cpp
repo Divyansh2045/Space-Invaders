@@ -16,11 +16,13 @@ PlayerService::~PlayerService()
 void PlayerService::initialize() 
 {
 	playerController->initialize();
+	
 }
 
 void PlayerService::update()
 {
 	playerController->update();
+	
 }
 
 void PlayerService::render() 

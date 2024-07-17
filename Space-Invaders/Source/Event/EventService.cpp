@@ -65,6 +65,7 @@ using namespace std;
 	bool EventService::pressedLeftKey() {
 		
 			return gameEvent.key.code == sf::Keyboard::Left;
+			
 	
 	}
 	bool EventService::pressedRightKey() {
