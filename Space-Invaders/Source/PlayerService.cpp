@@ -1,11 +1,11 @@
 #include "../HeaderFiles/PlayerService.h"
-#include "../HeaderFiles/ServiceLocator.h"
+#include "../../HeaderFiles/Player/PlayerController.h"
 
 
 
 PlayerService::PlayerService()
 {
-	playerController = new PlayerController;
+	playerController = new PlayerController();
 }
 
 PlayerService::~PlayerService() 

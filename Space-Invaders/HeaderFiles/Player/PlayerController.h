@@ -2,9 +2,10 @@
 //To handle all the logic of the player
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "../../HeaderFiles/Player/PlayerModel.h"
-#include"../../HeaderFiles/Player/PlayerView.h"
-#include "../../HeaderFiles/Player/PlayerController.h"
+
+class PlayerModel;
+class PlayerView;
+enum class PlayerState;
 
 class PlayerController {
 

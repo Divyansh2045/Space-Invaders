@@ -2,22 +2,24 @@
 #include "../../HeaderFiles/Player/PlayerController.h"
 #include "../../HeaderFiles/ServiceLocator.h"
 #include "../../HeaderFiles/EventService.h"
+#include "../../HeaderFiles/Player/PlayerModel.h"
+#include"../../HeaderFiles/Player/PlayerView.h"
 #include <algorithm>
 
 PlayerController::PlayerController() {
 	playerView = new PlayerView;
 	playerModel = new PlayerModel;
-
 }
 PlayerController::~PlayerController() {
-	delete playerView;
-	delete playerModel;
+	delete (playerView);
+	delete (playerModel);
 }
 
 void PlayerController::moveLeft() {
 
 	sf::Vector2f currentPosition = playerModel->getPlayerPosition();
-	currentPosition.x -= playerModel->playerMovementSpeed* ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+	currentPosition.x -= playerModel->playerMovementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+
 	currentPosition.x = std::max(currentPosition.x, playerModel->leftScreenSide.x);
 	playerModel->setPlayerPosition(currentPosition);
 
@@ -25,7 +27,8 @@ void PlayerController::moveLeft() {
 
 void PlayerController::moveRight()  {
 	sf::Vector2f currentPosition = playerModel->getPlayerPosition();
-	currentPosition.x += playerModel->playerMovementSpeed* ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+	currentPosition.x += playerModel->playerMovementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+
 	currentPosition.x = std::min(currentPosition.x, playerModel->rightScreenSide.x);
 	playerModel->setPlayerPosition(currentPosition);
 }
@@ -40,8 +43,6 @@ void PlayerController::ProcessPlayerInput(){
 	{
 		moveRight();
 	}
-
-
 
 }
 void PlayerController::initialize() {
@@ -64,7 +65,7 @@ void PlayerController::render() {
 
 }
 
-sf::Vector2f getPlayerPosition() {
+sf::Vector2f PlayerController::getPlayerPosition() {
 	return playerModel->getPlayerPosition();
 }
 

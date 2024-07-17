@@ -1,17 +1,15 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../../HeaderFiles/Player/PlayerController.h"
+
+class PlayerController;
 
 
 class PlayerService
 {
-
 private:
 
 	PlayerController* playerController;
-
-
 
 public:
 
@@ -21,11 +19,6 @@ public:
 	void update();
 	void render(); 
 	void initialize();
-
-
-
-
-
 
 
 };

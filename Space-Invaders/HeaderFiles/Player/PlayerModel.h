@@ -20,7 +20,7 @@ private:
 
 public:
 	
-	const float playerMovementSpeed = 200.0f;
+	const float playerMovementSpeed = 4000.0f;
 	PlayerModel();
 	~PlayerModel();
 
