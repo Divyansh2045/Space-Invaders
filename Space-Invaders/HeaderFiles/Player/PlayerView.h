@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 #include <SFML/Graphics.hpp>
+#include "../../HeaderFiles/Player/PlayerController.h"
 
 //To render all the player images onto the screen
 
@@ -18,6 +19,7 @@ private:
 	void initializePlayerSprite();
 	void scalePlayerSprite();
  
+	PlayerController* playerController;
 
 public:
 	PlayerView();
@@ -27,6 +29,9 @@ public:
 	void initialize();
 	void render();
 	void update();
+
+	void initialize(PlayerController* controller); // we pass a pointer of type controller because we need to use this in the view later.
+}
 	
 
 };

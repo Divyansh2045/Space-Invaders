@@ -2,68 +2,29 @@
 #include "../HeaderFiles/ServiceLocator.h"
 
 
+
 PlayerService::PlayerService()
 {
-	gameWindow = nullptr;
-}
-PlayerService::~PlayerService() = default;
-
-void PlayerService::initialize() {
-
-	gameWindow = ServiceLocator::getInstance()->GetGraphicService()->GetGameWindow();
-	initializePlayerSprite();
-}
-void PlayerService::update() {
-	processPlayerInput();
-
-	playerSprite.setPosition(getPlayerPosition());
-}
-void PlayerService::render() {
-	gameWindow->draw(playerSprite);
+	playerController = new PlayerController;
 }
 
-void PlayerService::processPlayerInput()
+PlayerService::~PlayerService() 
 {
-	EventService* eventservice = ServiceLocator::getInstance()->GetEventService();
-
-	if (eventservice->isKeyboardEvent())
-	{
-		if (eventservice->pressedLeftKey())
-		{
-			moveLeft();
-		
-		}
-		if (eventservice->pressedRightKey())
-		{
-			moveRight();
-		
-		}
-	}
+	delete (playerController) ;
 }
 
-
- void PlayerService::initializePlayerSprite()
+void PlayerService::initialize() 
 {
-
-	if (playerTexture.loadFromFile(player_texture_path))
-	{
-		playerSprite.setTexture(playerTexture);
-	}
+	playerController->initialize();
 }
 
- void PlayerService::moveLeft() {
-
-	position.x -= movementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
- }
- void PlayerService::moveRight() {
-	 
-	 position.x += movementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
- }
-
-void PlayerService::move(float offsetX) {
-	position.x += offsetX * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+void PlayerService::update()
+{
+	playerController->update();
 }
 
-//helper functions
-sf::Vector2f PlayerService::getPlayerPosition() { return position; }
-int PlayerService::getMoveSpeed() { return movementSpeed; }
+void PlayerService::render() 
+{
+	playerController->render();
+}
+

@@ -2,6 +2,7 @@
 using namespace std;
 #include "../../HeaderFiles/Player/PlayerView.h"
 #include "../../HeaderFiles/ServiceLocator.h"
+#include "../../HeaderFiles/Player/PlayerController.h"
 
 void PlayerView::initialize() {
 	gameWindow = ServiceLocator::getInstance()->GetGraphicService()->GetGameWindow();
@@ -32,9 +33,19 @@ PlayerView::~PlayerView() {
 
 }
 
+void PlayerView::initialize(PlayerController* controller) {
+
+	playerController = controller;
+	gameWindow = ServiceLocator::getInstance()->GetGraphicService()->GetGameWindow();
+	initializePlayerSprite();
+}
+
+void PlayerView::update() {
+	playerSprite.setPosition(playerController->getPlayerPosition());
+
+}
+
 void PlayerView::render() {
 	gameWindow->draw(playerSprite);
 }
-void PlayerView::update() {
 
-}
