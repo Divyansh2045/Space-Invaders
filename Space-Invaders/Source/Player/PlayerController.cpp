@@ -19,8 +19,6 @@ void PlayerController::initialize() {
 
 	playerModel->initialize();
 	playerView->initialize(this);
-	cout << "initalzie";
-
 }
 
 void PlayerController::update() {
