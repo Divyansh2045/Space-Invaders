@@ -2,27 +2,29 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 
-class EventService {
-	
-private:
-	sf::Event gameEvent;
-	sf::RenderWindow* gameWindow;
+namespace Event {
+	class EventService {
 
-	bool isGameWindowOpen();
-	bool gameWindowWasClosed();
-	bool hasQuitGame();
+	private:
+		sf::Event gameEvent;
+		sf::RenderWindow* gameWindow;
 
-public:
-   EventService();
-   ~EventService();
+		bool isGameWindowOpen();
+		bool gameWindowWasClosed();
+		bool hasQuitGame();
 
-   void initialize();
-   void update();
-   void processEvents();
-   bool pressedEscapeKey();
-   bool isKeyboardEvent();
-   
-   bool pressedLeftKey();
-   bool pressedRightKey();
+	public:
+		EventService();
+		~EventService();
 
-};
+		void initialize();
+		void update();
+		void processEvents();
+		bool pressedEscapeKey();
+		bool isKeyboardEvent();
+
+		bool pressedLeftKey();
+		bool pressedRightKey();
+
+	};
+}

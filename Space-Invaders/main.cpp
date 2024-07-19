@@ -4,7 +4,10 @@ using namespace std;
 #include "../../HeaderFiles/Main/GameService.h"
 #include <SFML/Graphics.hpp>
 
+using namespace Main;
+
 int main() {
+    
     GameService* game_service = new GameService();
    // EventService* event_service = new EventService();
 
