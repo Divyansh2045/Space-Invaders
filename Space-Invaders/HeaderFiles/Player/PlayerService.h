@@ -2,7 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace Player {
+namespace Player 
+{
 	class PlayerController;
 
 

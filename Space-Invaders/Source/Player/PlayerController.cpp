@@ -8,11 +8,10 @@
 
 namespace Player {
 
-	using namespace Player;
 
 	PlayerController::PlayerController() {
-		playerView = new Player::PlayerView; 
-		playerModel = new Player::PlayerModel; 
+		playerView = new PlayerView; 
+		playerModel = new PlayerModel; 
 	}
 	PlayerController::~PlayerController() {
 		delete (playerView);

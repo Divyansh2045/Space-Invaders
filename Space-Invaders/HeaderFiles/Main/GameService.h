@@ -2,10 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include "../../HeaderFiles/Global/ServiceLocator.h"
 
+namespace Global
+{
+	class ServiceLocator;
+}
 namespace Main
 {
 
-	class ServiceLocator;
+	//class ServiceLocator;
 
 	class GameService
 	{

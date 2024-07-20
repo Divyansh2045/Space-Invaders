@@ -2,8 +2,10 @@
 #include <iostream>
 using namespace std;
 #include <SFML/Graphics.hpp>
+#include "../../HeaderFiles/Player/PlayerController.h"
 
-namespace Player {
+namespace Player 
+{
 	class PlayerController;
 
 	//To render all the player images onto the screen

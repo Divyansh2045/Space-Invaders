@@ -1,8 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "../../HeaderFiles/Player/PlayerController.h"
 //TO maintain and store data of the player
 
-namespace Player {
+namespace Player 
+{
 	enum class PlayerState {
 
 		ALIVE,
