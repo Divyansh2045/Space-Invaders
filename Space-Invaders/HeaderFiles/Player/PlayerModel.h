@@ -1,48 +1,51 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "../../HeaderFiles/Player/PlayerController.h"
 //TO maintain and store data of the player
 
-enum class PlayerState {
+namespace Player 
+{
+	enum class PlayerState {
 
-	ALIVE,
-	DEAD
+		ALIVE,
+		DEAD
 
-};
+	};
 
-class PlayerModel {
+	class PlayerModel {
 
-private:
-	
-	const sf::Vector2f initialPlayerPosition = sf::Vector2f(500.0f, 500.0f);
-	sf::Vector2f playerPosition;
-	PlayerState playerState; //Declaration
-	int playerScore;
+	private:
 
-public:
-	
-	const float playerMovementSpeed = 4000.0f;
-	PlayerModel();
-	~PlayerModel();
+		const sf::Vector2f initialPlayerPosition = sf::Vector2f(500.0f, 500.0f);
+		sf::Vector2f playerPosition;
+		PlayerState playerState; //Declaration
+		int playerScore;
 
-	void Reset();
-	void initialize();
+	public:
 
+		const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 0.0f);
+		const sf::Vector2f rightScreenSide = sf::Vector2f(700.0f, 0.0f);
 
-	//getters and setters
-	sf::Vector2f getPlayerPosition();
-	void setPlayerPosition(sf::Vector2f position);
+		const float playerMovementSpeed = 200.0f;
+		PlayerModel();
+		~PlayerModel();
 
-
-	int getPlayerScore();
-	void setPlayerScore(int score);
-
-	//new getter and setter
-	PlayerState getPlayerState();
-	void setPlayerState(PlayerState state);
-
-	const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 0.0f);
-	const sf::Vector2f rightScreenSide = sf::Vector2f(700.0f, 0.0f);
+		void Reset();
+		void initialize();
 
 
+		//getters and setters
+		sf::Vector2f getPlayerPosition();
+		void setPlayerPosition(sf::Vector2f position);
 
-};
+
+		int getPlayerScore();
+		void setPlayerScore(int score);
+
+		//new getter and setter
+		PlayerState getPlayerState();
+		void setPlayerState(PlayerState state);
+
+
+	};
+}

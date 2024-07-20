@@ -1,6 +1,14 @@
 #include <iostream>
 using namespace std;
-#include"../HeaderFiles/ServiceLocator.h"
+#include "../../HeaderFiles/Global/ServiceLocator.h"
+
+namespace Global
+{
+
+	using namespace Graphic;
+	using namespace Time;
+	using namespace Event;
+	using namespace Player;
 
 // Initialize the static instance pointer
 ServiceLocator* ServiceLocator::instance = nullptr;
@@ -64,10 +72,18 @@ void ServiceLocator::clearAllServices() {
 }
 
 // Returns a pointer to the currently set graphic service.
-GraphicService* ServiceLocator::GetGraphicService() { return graphic_service; }
-EventService* ServiceLocator::GetEventService() { return event_service; }
-PlayerService* ServiceLocator::GetPlayerService() { return player_service; }
-TimeService* ServiceLocator::GetTimeService() { return time_service; }
+
+    GraphicService* ServiceLocator::GetGraphicService() 
+{ return graphic_service; }
+    EventService* ServiceLocator::GetEventService() 
+{ return event_service; }
+    PlayerService* ServiceLocator::GetPlayerService() 
+{ return player_service; }
+    TimeService* ServiceLocator::GetTimeService()
+{ return time_service; }
+
+
+}
 
  //ServiceLocator:: static ServiceLocator* getInstance() {
 

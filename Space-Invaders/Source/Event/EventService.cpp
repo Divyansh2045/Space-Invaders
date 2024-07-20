@@ -1,11 +1,14 @@
 #include <iostream>
-#include "../HeaderFiles/GameService.h"
+#include "../../HeaderFiles/Main/GameService.h"
 using namespace std;
-#include "../HeaderFiles/EventService.h"
-#include "../HeaderFiles/GraphicService.h"
+#include "../../HeaderFiles/Event/EventService.h"
+#include "../../HeaderFiles/Graphic/GraphicService.h"
 
+namespace Event 
+{
+	using namespace Global;
 
-	EventService::EventService() 
+	EventService::EventService()
 	{
 		//gameEvent = nullptr;
 		gameWindow = nullptr;
@@ -14,11 +17,11 @@ using namespace std;
 	{
 
 	}
-	void EventService::initialize() 
+	void EventService::initialize()
 	{
 		gameWindow = ServiceLocator::getInstance()->GetGraphicService()->GetGameWindow();
 	}
-	void EventService::update() 
+	void EventService::update()
 	{
 		processEvents();
 	}
@@ -48,27 +51,28 @@ using namespace std;
 	}
 	bool EventService::pressedEscapeKey() {
 		return (gameEvent.key.code == sf::Keyboard::Escape);
-		
+
 	}
 	bool EventService::isKeyboardEvent() {
 		return (gameEvent.type == sf::Event::KeyPressed);
 	}
-	bool EventService::isGameWindowOpen() 
+	bool EventService::isGameWindowOpen()
 	{
 		return gameWindow != nullptr;
 	}
-	bool EventService::gameWindowWasClosed() 
+	bool EventService::gameWindowWasClosed()
 	{
 		return gameEvent.type == sf::Event::Closed;
 	}
-	
+
 	bool EventService::pressedLeftKey() {
-		
-			return gameEvent.key.code == sf::Keyboard::Left;
-	
+
+		return gameEvent.key.code == sf::Keyboard::Left;
+
+
 	}
 	bool EventService::pressedRightKey() {
 
 		return gameEvent.key.code == sf::Keyboard::Right;
 	}
-
+}

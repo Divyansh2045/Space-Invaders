@@ -1,8 +1,12 @@
 #include <iostream>
 using namespace std;
-#include "../HeaderFiles/GameService.h"
-#include "../HeaderFiles/GraphicService.h"
+#include "../../HeaderFiles/Graphic/GraphicService.h"
+#include "../../HeaderFiles/Main/GameService.h"
 
+
+namespace Main 
+{
+	using namespace Global;
 
 	void GameService::initialize() // initialization of game 
 	{
@@ -20,7 +24,7 @@ using namespace std;
 	}
 	GameService::GameService() // Default Constructor 
 	{
-		service_locator = nullptr; 
+		service_locator = nullptr;
 		gameWindow = nullptr; // Initializes game window pointer to null
 		//gameloop
 	}
@@ -34,25 +38,26 @@ using namespace std;
 	{
 		service_locator->GetEventService()->processEvents();
 		service_locator->update();
-		
+
 	}
-	void GameService::ignite(){ // Initiates the game 
-		service_locator = ServiceLocator::getInstance();
+	void GameService::ignite() { // Initiates the game 
+		service_locator = Global::ServiceLocator::getInstance();
 		initialize();
-		
-	
+
+
 	}
 	void GameService::render() { //Renders each object each frame
 		gameWindow->clear(service_locator->GetGraphicService()->GetWindowColor());
 		service_locator->render();
 		gameWindow->display();
-	
+
 
 	}
 	bool GameService::isRunning() // Keeps on checking if the game is running
 	{
 		return service_locator->GetGraphicService()->isGameWindowOpen();
 	}
+}
 		
 
 
