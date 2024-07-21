@@ -9,6 +9,7 @@ namespace Global
 	using namespace Time;
 	using namespace Event;
 	using namespace Player;
+	using namespace UI;
 
 // Initialize the static instance pointer
 ServiceLocator* ServiceLocator::instance = nullptr;
@@ -18,6 +19,7 @@ ServiceLocator::ServiceLocator(){
 	event_service = nullptr;
 	player_service = nullptr;
 	time_service = nullptr;
+	ui_service = nullptr;
 
 	createServices();
 }
@@ -36,7 +38,7 @@ void ServiceLocator::initialize(){
 	event_service->initialize();
 	player_service->initialize();
 	time_service->initialize();
-	//game_service->
+	ui_service->initialize();
 }
 void ServiceLocator::update() {
 	//Keeps on updating services required and updates the game state
@@ -44,12 +46,14 @@ void ServiceLocator::update() {
 	event_service->update();
 	player_service->update();
 	time_service->update();
+	ui_service->update();
 
 }
 void ServiceLocator::render() {
 	//Keeps on rendering the new services
 	graphic_service->render();
 	player_service->render();
+	ui_service->render();
 
 
 }
@@ -58,6 +62,7 @@ void ServiceLocator::createServices() {
 	event_service = new EventService();
 	player_service = new PlayerService();
 	time_service = new TimeService();
+	ui_service = new UIService();
 
 }
 void ServiceLocator::clearAllServices() {
@@ -69,6 +74,8 @@ void ServiceLocator::clearAllServices() {
 	player_service = nullptr;
 	delete(time_service);
 	time_service = nullptr;
+	delete (ui_service);
+	ui_service = nullptr;
 }
 
 // Returns a pointer to the currently set graphic service.
@@ -81,6 +88,9 @@ void ServiceLocator::clearAllServices() {
 { return player_service; }
     TimeService* ServiceLocator::GetTimeService()
 { return time_service; }
+	UIService* ServiceLocator::GetUIService(){
+		return ui_service;
+	}
 
 
 }

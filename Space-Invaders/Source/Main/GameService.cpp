@@ -8,10 +8,13 @@ namespace Main
 {
 	using namespace Global;
 
+	GameState GameService::currentState = GameState::BOOT;
+
 	void GameService::initialize() // initialization of game 
 	{
 		service_locator->initialize();
 		initializeVariables();//INitialize variables
+	
 
 	}
 	void GameService::destroy() // Destroys game objects when destroyed 
@@ -56,6 +59,15 @@ namespace Main
 	bool GameService::isRunning() // Keeps on checking if the game is running
 	{
 		return service_locator->GetGraphicService()->isGameWindowOpen();
+	}
+
+    void GameService::setGameState(GameState newState) {
+
+		currentState = newState;
+
+	}
+     GameState GameService::getGameState() {
+		return currentState;
 	}
 }
 		
