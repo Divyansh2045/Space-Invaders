@@ -2,6 +2,8 @@
 #include "../../HeaderFiles/Main/GameService.h"
 #include "../../HeaderFiles/Graphic/GraphicService.h"
 #include "../../HeaderFiles/Global/ServiceLocator.h"
+#include <iostream>
+using namespace std;
 
 namespace UI {
 
@@ -103,8 +105,38 @@ namespace UI {
 
 
 		}
+		void MainMenuUIController::processButtonInteractions() 
+		{
+		
+			sf::Vector2f mousePosition = sf::Vector2f(sf::Mouse::getPosition());
+			if (clickedButton(&playButtonSprite, mousePosition))
+			{
+				GameService::setGameState(GameState::GAMEPLAY);
+			}
 
-		void MainMenuUIController::update() {
+			if (clickedButton(&instructionSprite, mousePosition))
+			{
+				cout << "You are seeing the game instructions " << endl;
+			}
+
+			if (clickedButton(&quitButtonSprite, mousePosition))
+			{
+				gameWindow->close();
+			}
+			{
+
+			}
+
+		}
+		bool MainMenuUIController::clickedButton(sf::Sprite* buttonSprite, sf::Vector2f mousePositon) {
+			EventService* event_service = ServiceLocator::getInstance()->GetEventService();
+			return event_service->pressedLeftMouseButton() && buttonSprite->getGlobalBounds().contains(mousePositon);
+			
+		}
+
+		void MainMenuUIController::update()
+		{
+			processButtonInteractions();
 
 		}
 

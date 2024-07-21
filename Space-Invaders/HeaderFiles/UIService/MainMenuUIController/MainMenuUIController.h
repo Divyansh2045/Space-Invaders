@@ -54,6 +54,9 @@ namespace UI {
 
 			bool loadButtonTexturesFromFile();
 
+			void processButtonInteractions();
+			bool clickedButton(sf::Sprite*, sf::Vector2f);
+
 			//Lidecycle methods
 			void initialize();
 			void render();
