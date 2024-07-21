@@ -55,7 +55,6 @@ void ServiceLocator::render() {
 	player_service->render();
 	ui_service->render();
 
-
 }
 void ServiceLocator::createServices() {
 	graphic_service = new GraphicService();

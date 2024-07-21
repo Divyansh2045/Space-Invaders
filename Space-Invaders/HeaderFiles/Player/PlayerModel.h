@@ -16,17 +16,17 @@ namespace Player
 
 	private:
 
-		const sf::Vector2f initialPlayerPosition = sf::Vector2f(500.0f, 500.0f);
+		const sf::Vector2f initialPlayerPosition = sf::Vector2f(950.0f, 950.0f);
 		sf::Vector2f playerPosition;
 		PlayerState playerState; //Declaration
 		int playerScore;
 
 	public:
 
-		const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 0.0f);
-		const sf::Vector2f rightScreenSide = sf::Vector2f(700.0f, 0.0f);
+		const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 950.0f);
+		const sf::Vector2f rightScreenSide = sf::Vector2f(1800.0f, 950.0f);
 
-		const float playerMovementSpeed = 200.0f;
+		const float playerMovementSpeed = 350.0f;
 		PlayerModel();
 		~PlayerModel();
 
