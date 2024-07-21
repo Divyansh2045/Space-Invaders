@@ -45,6 +45,7 @@ namespace Main
 
 		static void setGameState(GameState newState);
 		static GameState getGameState();
+		void showMainMenu();
 
 
 	};

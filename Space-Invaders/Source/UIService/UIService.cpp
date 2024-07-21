@@ -29,17 +29,29 @@ namespace UI
 	}
 
 	void UIService::update() {
-		
+		switch (GameService::getGameState())
+		{
+		case GameState::MAINMENU:
+			   return mainMenuUIController->update();
+			   break;
+			
+		}
 	}
 
 	void UIService::render()
 	{
-		
+		switch (GameService::getGameState())
+		{
+		case GameState::MAINMENU:
+			return mainMenuUIController->render();
+			break;
+		}
 	}
 
 	void UIService::initialize()
 	{
 		createUIControllers();
+		mainMenuUIController->initialize();
 	}
 
 	void UIService::destroy()

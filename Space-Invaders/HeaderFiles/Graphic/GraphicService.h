@@ -12,8 +12,8 @@ namespace Graphic
 
 		const string gameWindowTitle = "SPACE INVADERS";
 
-		const int gameWindowHeight = 800;
-		const int gameWindowWidth = 600;
+		const int gameWindowHeight = 1920;
+		const int gameWindowWidth = 1080;
 		const int frameRate = 60;
 
 		const sf::Color gameWindowColor = sf::Color::Blue;
