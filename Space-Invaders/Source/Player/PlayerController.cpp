@@ -42,11 +42,14 @@ namespace Player {
 
 	void PlayerController::ProcessPlayerInput() {
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		Event::EventService* eventService = Global::ServiceLocator::getInstance()->GetEventService();
+
+		if (eventService->pressedLeftKey() || eventService->pressedAKey())
 		{
 			moveLeft();
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+
+		if (eventService->pressedRightKey() || eventService->pressedDKey())
 		{
 			moveRight();
 		}
