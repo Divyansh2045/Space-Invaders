@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "../../HeaderFiles/Global/ServiceLocator.h"
+#include "../../HeaderFiles/Main/GameService.h"
 
 namespace Global
 {
@@ -10,7 +11,8 @@ namespace Global
 	using namespace Event;
 	using namespace Player;
 	using namespace UI;
-
+	using namespace Enemy;
+	using namespace Main;
 // Initialize the static instance pointer
 ServiceLocator* ServiceLocator::instance = nullptr;
 
@@ -20,7 +22,7 @@ ServiceLocator::ServiceLocator(){
 	player_service = nullptr;
 	time_service = nullptr;
 	ui_service = nullptr;
-
+	enemy_service = nullptr;
 	createServices();
 }
 ServiceLocator::~ServiceLocator() {
@@ -39,20 +41,29 @@ void ServiceLocator::initialize(){
 	player_service->initialize();
 	time_service->initialize();
 	ui_service->initialize();
+	enemy_service->initialize();
 }
 void ServiceLocator::update() {
 	//Keeps on updating services required and updates the game state
 	graphic_service->update();
-	event_service->update();
-	player_service->update();
 	time_service->update();
-	ui_service->update();
+	event_service->update();
 
+	if (GameService::getGameState() == GameState::GAMEPLAY)
+	{
+		player_service->update();
+		enemy_service->update();
+	}
+	ui_service->update();
 }
 void ServiceLocator::render() {
 	//Keeps on rendering the new services
 	graphic_service->render();
-	player_service->render();
+	if (GameService::getGameState() == GameState::GAMEPLAY)
+	{
+		player_service->render();
+		enemy_service->render();
+	}
 	ui_service->render();
 
 }
@@ -62,6 +73,7 @@ void ServiceLocator::createServices() {
 	player_service = new PlayerService();
 	time_service = new TimeService();
 	ui_service = new UIService();
+	enemy_service = new EnemyService();
 
 }
 void ServiceLocator::clearAllServices() {
@@ -75,6 +87,8 @@ void ServiceLocator::clearAllServices() {
 	time_service = nullptr;
 	delete (ui_service);
 	ui_service = nullptr;
+	delete(enemy_service);
+	enemy_service = nullptr;
 }
 
 // Returns a pointer to the currently set graphic service.
@@ -89,6 +103,9 @@ void ServiceLocator::clearAllServices() {
 { return time_service; }
 	UIService* ServiceLocator::GetUIService(){
 		return ui_service;
+	}
+	EnemyService* ServiceLocator::GetEnemyService() {
+		return enemy_service;
 	}
 
 
