@@ -133,6 +133,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\Enemy\EnemyController.cpp" />
+    <ClCompile Include="Source\Enemy\EnemyModel.cpp" />
+    <ClCompile Include="Source\Enemy\EnemyService.cpp" />
+    <ClCompile Include="Source\Enemy\EnemyView.cpp" />
     <ClCompile Include="Source\Event\EventService.cpp" />
     <ClCompile Include="Source\Main\GameService.cpp" />
     <ClCompile Include="Source\Graphic\GraphicService.cpp" />
@@ -146,6 +150,10 @@
     <ClCompile Include="Source\UIService\UIService.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HeaderFiles\Enemy\EnemyController.h" />
+    <ClInclude Include="HeaderFiles\Enemy\EnemyModel.h" />
+    <ClInclude Include="HeaderFiles\Enemy\EnemyService.h" />
+    <ClInclude Include="HeaderFiles\Enemy\EnemyView.h" />
     <ClInclude Include="HeaderFiles\Event\EventService.h" />
     <ClInclude Include="HeaderFiles\Main\GameService.h" />
     <ClInclude Include="HeaderFiles\Graphic\GraphicService.h" />
