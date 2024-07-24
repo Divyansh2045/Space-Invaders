@@ -26,6 +26,7 @@ namespace Enemy
 
 	void EnemyController::update() {
 		enemyView->update();
+		move();
 	}
 	void EnemyController::render() {
 		enemyView->render();
@@ -35,4 +36,70 @@ namespace Enemy
 		return enemyModel->getEnemyPosition();
 	}
 
+	void EnemyController::move() {
+
+		switch (enemyModel->getMovementDirection())
+		{
+		case::Enemy::MovementDirection::RIGHT:
+		
+			moveRight();
+			break;
+
+		case::Enemy::MovementDirection::LEFT:
+		
+           moveLeft();
+		   break;
+
+		case::Enemy::MovementDirection::DOWN:
+		
+			moveDown();
+			break;
+		
+		}
+	}
+
+	void EnemyController::moveRight()
+	{
+		sf::Vector2f currentPosition = enemyModel->getEnemyPosition();
+		currentPosition.x += enemyModel->enemyMovementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+
+		if (currentPosition.x >= enemyModel->rightScreenSide.x)
+		{
+			enemyModel->setMovementDirection(MovementDirection::DOWN);
+			enemyModel->setReferencePosition(currentPosition);
+		}
+		else (enemyModel->setEnemyPosition(currentPosition));
+	}
+
+	void EnemyController::moveLeft()
+	{
+		sf::Vector2f currentPosition = enemyModel->getEnemyPosition();
+		currentPosition.x -= enemyModel->enemyMovementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+
+		if (currentPosition.x <= enemyModel->leftScreenSide.x)
+		{
+			enemyModel->setMovementDirection(MovementDirection::DOWN);
+			enemyModel->setReferencePosition(currentPosition);
+		}
+		else (enemyModel->setEnemyPosition(currentPosition));
+	}
+
+	void EnemyController::moveDown()
+	{
+		sf::Vector2f currentPosition = enemyModel->getEnemyPosition();
+		currentPosition.y += enemyModel->enemyVerticalDistance * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+
+		if (currentPosition.y >= enemyModel->getReferencePosition().y + enemyModel->enemyVerticalDistance)
+		{
+			if (enemyModel->getReferencePosition().x <= enemyModel->leftScreenSide.x)
+			{
+				enemyModel->setMovementDirection(MovementDirection::RIGHT);
+			}
+			else (enemyModel->setMovementDirection(MovementDirection::LEFT));
+		}
+				else (enemyModel->setEnemyPosition(currentPosition));
+
+		
+
+	}
 }
