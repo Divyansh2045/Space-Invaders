@@ -13,6 +13,7 @@ namespace Global
 	using namespace UI;
 	using namespace Enemy;
 	using namespace Main;
+	using namespace Gameplay;
 // Initialize the static instance pointer
 ServiceLocator* ServiceLocator::instance = nullptr;
 
@@ -23,6 +24,7 @@ ServiceLocator::ServiceLocator(){
 	time_service = nullptr;
 	ui_service = nullptr;
 	enemy_service = nullptr;
+	gameplay_service = nullptr;
 	createServices();
 }
 ServiceLocator::~ServiceLocator() {
@@ -42,17 +44,21 @@ void ServiceLocator::initialize(){
 	time_service->initialize();
 	ui_service->initialize();
 	enemy_service->initialize();
+	gameplay_service->initialize();
 }
 void ServiceLocator::update() {
 	//Keeps on updating services required and updates the game state
 	graphic_service->update();
 	time_service->update();
 	event_service->update();
+	
 
 	if (GameService::getGameState() == GameState::GAMEPLAY)
 	{
+		gameplay_service->update();
 		player_service->update();
 		enemy_service->update();
+		
 	}
 	ui_service->update();
 }
@@ -61,10 +67,13 @@ void ServiceLocator::render() {
 	graphic_service->render();
 	if (GameService::getGameState() == GameState::GAMEPLAY)
 	{
+		gameplay_service->render();
 		player_service->render();
 		enemy_service->render();
+	
 	}
 	ui_service->render();
+
 
 }
 void ServiceLocator::createServices() {
@@ -74,6 +83,7 @@ void ServiceLocator::createServices() {
 	time_service = new TimeService();
 	ui_service = new UIService();
 	enemy_service = new EnemyService();
+	gameplay_service = new GameplayService();
 
 }
 void ServiceLocator::clearAllServices() {
@@ -89,6 +99,8 @@ void ServiceLocator::clearAllServices() {
 	ui_service = nullptr;
 	delete(enemy_service);
 	enemy_service = nullptr;
+	delete(gameplay_service);
+	gameplay_service = nullptr;
 }
 
 // Returns a pointer to the currently set graphic service.
@@ -106,6 +118,9 @@ void ServiceLocator::clearAllServices() {
 	}
 	EnemyService* ServiceLocator::GetEnemyService() {
 		return enemy_service;
+	}
+	GameplayService* ServiceLocator::GetGameplayService() {
+		return gameplay_service;
 	}
 
 

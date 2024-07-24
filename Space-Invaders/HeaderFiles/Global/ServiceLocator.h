@@ -7,6 +7,7 @@
 #include "../../HeaderFiles/Time/TimeService.h"
 #include "../../HeaderFiles/UIService/UIService.h"
 #include "../../HeaderFiles/Enemy/EnemyService.h"
+#include "../../HeaderFiles/Gameplay/GameplayService.h"
 
 namespace Main {
 	class GameService;
@@ -25,6 +26,7 @@ namespace Main {
 			Time::TimeService* time_service{ nullptr };
 			UI::UIService* ui_service{ nullptr };
 			Enemy::EnemyService* enemy_service{ nullptr };
+			Gameplay::GameplayService* gameplay_service{ nullptr };
 
 			ServiceLocator();
 
@@ -47,6 +49,7 @@ namespace Main {
 			Time::TimeService* GetTimeService();
 			UI::UIService* GetUIService();
 			Enemy::EnemyService* GetEnemyService();
+			Gameplay::GameplayService* GetGameplayService();
 
 		};
 	}
