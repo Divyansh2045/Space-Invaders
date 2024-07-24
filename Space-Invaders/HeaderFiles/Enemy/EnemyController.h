@@ -25,6 +25,11 @@ namespace Enemy {
 		void render();
 
 		sf::Vector2f getEnemyPosition();
+
+		void move();
+		void moveRight();
+		void moveLeft();
+		void moveDown();
 	};
 
 }
