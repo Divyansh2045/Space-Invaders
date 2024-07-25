@@ -1,5 +1,4 @@
 #pragma once
-//#include "../../HeaderFiles/Enemy/EnemyModel.h"
 #include <SFML/Graphics.hpp>
 
 namespace Enemy {
@@ -14,6 +13,11 @@ namespace Enemy {
 		EnemyView* enemyView;
 		EnemyModel* enemyModel;
 
+		void move();
+		void moveRight();
+		void moveLeft();
+		void moveDown();
+
 	public:
 		EnemyController();
 		~EnemyController();
@@ -26,10 +30,7 @@ namespace Enemy {
 
 		sf::Vector2f getEnemyPosition();
 
-		void move();
-		void moveRight();
-		void moveLeft();
-		void moveDown();
+	
 	};
 
 }

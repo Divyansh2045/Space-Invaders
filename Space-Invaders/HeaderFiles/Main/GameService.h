@@ -24,8 +24,8 @@ namespace Main
 	private:
 		static GameState currentState;
 
-		Global::ServiceLocator* service_locator{ nullptr };
-		sf::RenderWindow* gameWindow{ nullptr };
+		Global::ServiceLocator* service_locator;
+		sf::RenderWindow* gameWindow;
 
 		void initialize(); // Handle game initialization
 		void destroy(); // Destroys unneeded objects

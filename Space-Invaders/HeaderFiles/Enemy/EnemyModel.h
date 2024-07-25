@@ -1,7 +1,14 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-namespace Enemy {
+namespace Enemy 
+{
+	enum class EnemyState
+	{
+		ALIVE,
+		DEAD,
+	};
+
 	enum  MovementDirection
 	{
 		RIGHT,
@@ -21,11 +28,13 @@ namespace Enemy {
 	
 
 	public:
+		
 		const float enemyMovementSpeed = 250.0f;
 		const float enemyVerticalDistance = 100.0f;
 
 		const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 950.0f);
 		const sf::Vector2f rightScreenSide = sf::Vector2f(1800.0f, 950.0f);
+	
 
 		EnemyModel();
 		~EnemyModel();

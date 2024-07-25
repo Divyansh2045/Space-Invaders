@@ -2,12 +2,15 @@
 #include "../../HeaderFiles/Enemy/EnemyModel.h"
 #include "../../HeaderFiles/Enemy/EnemyView.h"
 #include "../../HeaderFiles/Global/ServiceLocator.h"
+#include "../../HeaderFiles/Event/EventService.h"
 #include <iostream>
 using namespace std;
 
 namespace Enemy
 {
 	using namespace Global;
+	using namespace Time;
+	using namespace Event;
 
 	EnemyController::EnemyController() {
 		enemyModel = new EnemyModel();
@@ -25,8 +28,8 @@ namespace Enemy
 	}
 
 	void EnemyController::update() {
-		enemyView->update();
 		move();
+		enemyView->update();
 	}
 	void EnemyController::render() {
 		enemyView->render();
