@@ -25,6 +25,8 @@ ServiceLocator::ServiceLocator(){
 	ui_service = nullptr;
 	enemy_service = nullptr;
 	gameplay_service = nullptr;
+
+
 	createServices();
 }
 ServiceLocator::~ServiceLocator() {

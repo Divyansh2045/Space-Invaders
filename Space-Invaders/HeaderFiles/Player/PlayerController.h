@@ -4,14 +4,15 @@
 #include <SFML/Graphics.hpp>
 #include "../../HeaderFiles/Player/PlayerModel.h"
 #include "../../HeaderFiles/Player/PlayerView.h"
-class PlayerModel;
-class PlayerView;
-enum class PlayerState;
+
 
 
 namespace Player 
 {
-	
+	class PlayerModel;
+	class PlayerView;
+	enum class PlayerState;
+
 	class PlayerController {
 
 	private:

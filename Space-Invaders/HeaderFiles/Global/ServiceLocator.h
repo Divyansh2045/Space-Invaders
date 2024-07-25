@@ -9,9 +9,9 @@
 #include "../../HeaderFiles/Enemy/EnemyService.h"
 #include "../../HeaderFiles/Gameplay/GameplayService.h"
 
-namespace Main {
-	class GameService;
-}
+//namespace Main {
+	//class GameService;
+///}
 
 	namespace Global
 	{
@@ -19,17 +19,16 @@ namespace Main {
 		class ServiceLocator {
 
 		private:
-			Graphic::GraphicService* graphic_service{ nullptr };
+			Graphic::GraphicService* graphic_service;
 			static ServiceLocator* instance;
-			Event::EventService* event_service{ nullptr };
-			Player::PlayerService* player_service{ nullptr };
-			Time::TimeService* time_service{ nullptr };
-			UI::UIService* ui_service{ nullptr };
-			Enemy::EnemyService* enemy_service{ nullptr };
-			Gameplay::GameplayService* gameplay_service{ nullptr };
+			Event::EventService* event_service;
+			Player::PlayerService* player_service;
+			Time::TimeService* time_service;
+			UI::UIService* ui_service;
+			Enemy::EnemyService* enemy_service;
+			Gameplay::GameplayService* gameplay_service;
 
 			ServiceLocator();
-
 			~ServiceLocator();
 
 			void createServices(); 			// Creates instances of all services.
@@ -50,6 +49,7 @@ namespace Main {
 			UI::UIService* GetUIService();
 			Enemy::EnemyService* GetEnemyService();
 			Gameplay::GameplayService* GetGameplayService();
+			void deleteServiceLocator();
 
 		};
 	}
