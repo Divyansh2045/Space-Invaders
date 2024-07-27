@@ -13,18 +13,18 @@ namespace Enemy {
 		EnemyView* enemyView;
 		EnemyModel* enemyModel;
 
-		void move();
+		virtual void move();
 		void moveRight();
 		void moveLeft();
 		void moveDown();
 
 	public:
 		EnemyController();
-		~EnemyController();
+	    virtual ~EnemyController();
 
 		//Lifecycle
 
-		void initialize();
+		virtual void initialize();
 		void update();
 		void render();
 
