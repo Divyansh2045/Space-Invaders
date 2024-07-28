@@ -39,7 +39,7 @@ namespace Enemy
 		return enemyModel->getEnemyPosition();
 	}
 
-	void EnemyController::move() {
+	/*void EnemyController::move() {
 
 		switch (enemyModel->getMovementDirection())
 		{
@@ -59,7 +59,7 @@ namespace Enemy
 			break;
 		
 		}
-	}
+	} */
 
 	void EnemyController::moveRight()
 	{
