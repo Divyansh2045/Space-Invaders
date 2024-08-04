@@ -11,10 +11,10 @@ namespace Enemy
 
 	enum class EnemyType
 	{
-		ZAPPER,
-		SUBZERO,
-		UFO,
-		THUNDERSNAKE
+		ZAPPER,  
+		SUBZERO, 
+		//UFO,
+		//THUNDERSNAKE
 	};
 
 	enum class MovementDirection

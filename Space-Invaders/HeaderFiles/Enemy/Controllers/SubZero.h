@@ -15,7 +15,7 @@ namespace Enemy
 
 		public:
 
-			SubZero();
+			SubZero(EnemyType setType);
 			~SubZero() override;
 
 			void initialize() override;

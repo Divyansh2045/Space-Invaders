@@ -13,6 +13,7 @@ namespace Enemy
 
 		sf::Vector2f referencePosition = (sf::Vector2f(50.0f, 50.f));
 		sf::Vector2f enemyPosition;
+
 		EnemyState enemyState;
 		EnemyType enemyType;
 		MovementDirection movementDirection;
@@ -25,11 +26,11 @@ namespace Enemy
 		const float enemyMovementSpeed = 250.0f;
 		const float enemyVerticalDistance = 100.0f;
 
-		const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 950.0f);
-		const sf::Vector2f rightScreenSide = sf::Vector2f(1800.0f, 950.0f);
+		const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 50.0f);
+		const sf::Vector2f rightScreenSide = sf::Vector2f(1800.0f, 50.0f);
 	
-
-		EnemyModel(EnemyType type );
+		EnemyModel();
+		EnemyModel(EnemyType setType);
 		~EnemyModel();
 	
 

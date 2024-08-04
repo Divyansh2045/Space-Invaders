@@ -6,8 +6,8 @@ using namespace std;
 namespace Enemy
 {
 
-	EnemyModel::EnemyModel(EnemyType type) {
-		enemyType = type;
+	EnemyModel::EnemyModel(EnemyType setType) {
+		enemyType = setType;
 	}
 
 	EnemyModel::~EnemyModel() {
@@ -16,9 +16,9 @@ namespace Enemy
 
 	void EnemyModel::initialize()
 	{
+		enemyState = EnemyState::PATROLLING;
 		movementDirection = MovementDirection::RIGHT;
 		enemyPosition = referencePosition;
-		enemyState = EnemyState::PATROLLING;
 	}
 
 

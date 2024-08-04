@@ -9,13 +9,13 @@ namespace Enemy
 		{
 		private:
 
-			float verticalTravelDistance = 10.0f;
+			float verticalTravelDistance = 100.0f;
 			void moveLeft();
 			void moveRight();
 			void moveDown();
 			void move() override;
 		public:
-			Zapper();
+			Zapper(EnemyType setType);
 			~Zapper() override;
 
 			void initialize() override;

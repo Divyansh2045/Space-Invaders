@@ -2,10 +2,14 @@
 #include "../../HeaderFiles/Enemy/EnemyController.h"
 #include "../../HeaderFiles/Global/ServiceLocator.h"
 #include "../../HeaderFiles/Time/TimeService.h"
-
+#include "../../HeaderFiles/Enemy/Controllers/SubZero.h"
+#include "../../HeaderFiles/Enemy/Controllers/EnemyConfig.h"
+#include "../../HeaderFiles/Enemy/Controllers/Zapper.h"
+#include <SFML/Graphics.hpp>
 namespace Enemy {
 	using namespace Global;
 	using namespace Time;
+	using namespace Controllers;
 
 
 	EnemyService::EnemyService()
@@ -46,12 +50,13 @@ namespace Enemy {
 		}
 	}
 
-    void EnemyService::spawnEnemy() {
+    EnemyController * EnemyService::spawnEnemy() {
+		EnemyController* enemycontroller = createEnemy(getRandomEnemyType());
+	
+		enemycontroller->initialize();
 
-		EnemyController* enemyController = new EnemyController;
-		enemyController->initialize();
-
-		enemyList.push_back(enemyController);
+		enemyList.push_back(enemycontroller);
+		return enemycontroller;
 	
 	}
 	void EnemyService::updateSpawnTimer() {
@@ -67,4 +72,45 @@ namespace Enemy {
 			spawnTimer = 0.0f;
 		}
 	}
+
+	EnemyController* EnemyService::createEnemy(EnemyType createenemy)
+	{
+		switch (createenemy)
+		{
+		case Enemy::EnemyType::ZAPPER:
+			//EnemyController* createenemy = new Zapper();
+			return new Zapper(Enemy::EnemyType::ZAPPER);
+
+		case Enemy::EnemyType::SUBZERO:
+			return new SubZero(Enemy::EnemyType::SUBZERO);
+			
+
+		/*case Enemy::EnemyType::UFO:
+			return new UFO(Enemy::EnemyType::UFO);
+			
+		case Enemy::EnemyType::THUNDERSNAKE:
+			return new ThunderSnake(Enemy::EnemyType::THUNDERSNAKE);
+			 */
+		
+		}
+	}
+
+	EnemyType EnemyService::getRandomEnemyType()
+	{
+		int randomType = std::rand() % 2;
+		return static_cast<Enemy::EnemyType> (randomType);
+	}
+
+	void EnemyService::destroyEnemy(EnemyController* enemycontroller)
+	{
+		// Erase the enemy_controller object from the enemy_list vector.
+        // std::remove rearranges the elements in the vector so that all elements 
+        // that are equal to enemy_controller are moved to the end of the vector,
+        // then it returns an iterator pointing to the start of the removed elements.
+        // The erase function then removes those elements from the vector.
+		enemyList.erase(std::remove(enemyList.begin(), enemyList.end(), enemycontroller),enemyList.end());
+
+		delete (enemycontroller);
+	}
+
 }
