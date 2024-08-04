@@ -23,7 +23,7 @@ namespace Enemy {
 
 	void EnemyService::initialize() {
 		spawnTimer = enemySpawnDelay;
-		//spawnEnemy();
+		spawnEnemy();
 	}
 
 	void EnemyService::update() {

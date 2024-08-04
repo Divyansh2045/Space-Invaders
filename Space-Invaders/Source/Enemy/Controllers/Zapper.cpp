@@ -43,7 +43,7 @@ namespace Enemy
 
 		void Zapper::moveDown()
 		{
-			sf::Vector2f currentPosition;
+			sf::Vector2f currentPosition = enemyModel->getEnemyPosition();
 			currentPosition.y += enemyModel->enemyMovementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
 
 			if (currentPosition.y >= enemyModel->getReferencePosition().y + verticalTravelDistance)
@@ -66,8 +66,8 @@ namespace Enemy
 
 		void Zapper::moveLeft()
 		{
-			sf::Vector2f currentPosition;
-			currentPosition.x += enemyModel->enemyMovementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
+			sf::Vector2f currentPosition = enemyModel->getEnemyPosition();
+			currentPosition.x -= enemyModel->enemyMovementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
 
 			if (currentPosition.x <= enemyModel->leftScreenSide.x)
 			{
@@ -83,7 +83,7 @@ namespace Enemy
 
 		void Zapper::moveRight()
 		{
-			sf::Vector2f currentPosition;
+			sf::Vector2f currentPosition = enemyModel->getEnemyPosition();
 			currentPosition.x += enemyModel->enemyMovementSpeed * ServiceLocator::getInstance()->GetTimeService()->getDeltaTime();
 
 			if (currentPosition.x >= enemyModel->rightScreenSide.x)
