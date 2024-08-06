@@ -1,34 +1,43 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+
 namespace Enemy {
 
 	class EnemyModel;
 	class EnemyView;
+	enum class EnemyState;
+	enum class EnemyType;
 
 	class EnemyController 
 	{
-	private:
+	protected:
 
 		EnemyView* enemyView;
 		EnemyModel* enemyModel;
 
-		void move();
-		void moveRight();
-		void moveLeft();
-		void moveDown();
+		virtual void move() = 0;
+		sf::Vector2f getRandomInitialPosition();
+		void handleOutOfBounds();
+		//void moveRight();
+		//void moveLeft();
+		//void moveDown();
 
 	public:
-		EnemyController();
-		~EnemyController();
+		
+		EnemyController(EnemyType setType);
+	    virtual ~EnemyController();
 
 		//Lifecycle
 
-		void initialize();
+		virtual void initialize();
 		void update();
 		void render();
 
 		sf::Vector2f getEnemyPosition();
+		EnemyType getEnemyType();
+		EnemyState getEnemyState();
+		
 
 	
 	};

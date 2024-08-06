@@ -4,11 +4,15 @@
 
 namespace Enemy {
 	class EnemyController;
+	enum class EnemyType;
 	class EnemyView
+	
 	{
 	private:
 
-		const sf::String enemy_texture_path = "assets/textures/subzero.png";
+		const sf::String subzero_texture_path = "assets/textures/subzero.png";
+		const sf::String zapper_texture_path = "assets/textures/zapper.png";
+		const sf::String thundersnake_texture_path = "assets/textures/thunder_snake.png";
 		const float enemySpriteWidth = 60.f;
 		const float enemySpriteHeight = 60.f;
 
@@ -18,7 +22,7 @@ namespace Enemy {
 
 		EnemyController* enemyController;
 
-		void initializeEnemySprites();
+		void initializeEnemySprites(EnemyType setType);
 		void scaleEnemySprites();
 
 

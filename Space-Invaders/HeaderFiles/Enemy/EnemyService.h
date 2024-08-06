@@ -6,6 +6,7 @@
 namespace Enemy {
 
 	class EnemyController;
+	enum class EnemyType;
 
 	class EnemyService {
 
@@ -13,10 +14,12 @@ namespace Enemy {
 		std::vector<EnemyController*> enemyList;
 		void destroy();
 
-		const float enemySpawnDelay = 3.0f;
+		const float enemySpawnDelay = 2.0f;
 		float spawnTimer;
 		void updateSpawnTimer();
 		void processEnemySpawn();
+		EnemyType getRandomEnemyType();
+		EnemyController* createEnemy(EnemyType createenemy);
 	public:
 
 		EnemyService();
@@ -27,7 +30,11 @@ namespace Enemy {
 		void update();
 		void render();
 		
-		void spawnEnemy();
+		EnemyController* spawnEnemy();
+		void destroyEnemy(EnemyController * enemycontroller);
+
+		
+		
 		
 	};
 }

@@ -1,3 +1,4 @@
+#include "../../HeaderFiles/Enemy/Controllers/EnemyConfig.h"
 #include "../../HeaderFiles/Enemy/EnemyModel.h"
 #include <iostream>
 using namespace std;
@@ -5,8 +6,8 @@ using namespace std;
 namespace Enemy
 {
 
-	EnemyModel::EnemyModel() {
-
+	EnemyModel::EnemyModel(EnemyType setType) {
+		enemyType = setType;
 	}
 
 	EnemyModel::~EnemyModel() {
@@ -15,6 +16,7 @@ namespace Enemy
 
 	void EnemyModel::initialize()
 	{
+		enemyState = EnemyState::PATROLLING;
 		movementDirection = MovementDirection::RIGHT;
 		enemyPosition = referencePosition;
 	}
@@ -46,6 +48,25 @@ namespace Enemy
 		movementDirection = direction;
 	}
 
+	EnemyState EnemyModel::getEnemyState()
+	{
+		return enemyState;
+	}
+
+	void EnemyModel::setEnemyState(EnemyState state)
+	{
+		enemyState = state;
+	}
+
+	EnemyType EnemyModel::getEnemyType()
+	{
+		return enemyType;
+	}
+
+	void EnemyModel::setEnemyType(EnemyType setType)
+	{
+		enemyType = setType;
+	}
 
 
 	
