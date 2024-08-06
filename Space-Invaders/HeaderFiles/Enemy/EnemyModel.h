@@ -28,6 +28,7 @@ namespace Enemy
 
 		const sf::Vector2f leftScreenSide = sf::Vector2f(50.0f, 50.0f);
 		const sf::Vector2f rightScreenSide = sf::Vector2f(1800.0f, 50.0f);
+		const sf::Vector2f bottomScreenSide = sf::Vector2f(0.0f, 100.0f);
 	
 		EnemyModel();
 		EnemyModel(EnemyType setType);

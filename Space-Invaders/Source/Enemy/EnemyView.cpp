@@ -33,20 +33,26 @@ namespace Enemy
 	{
 		switch (setType)
 		{
-		case:: Enemy::EnemyType::SUBZERO:
+		case Enemy::EnemyType::SUBZERO:
 			if (enemyTexture.loadFromFile(subzero_texture_path))
 			{
 				enemySprite.setTexture(enemyTexture);
 				scaleEnemySprites();
 			}
 			break;
-		case:: Enemy::EnemyType::ZAPPER:
+		case Enemy::EnemyType::ZAPPER:
 			if (enemyTexture.loadFromFile(zapper_texture_path))
 			{
 				enemySprite.setTexture(enemyTexture);
 				scaleEnemySprites();
 			}
 			break;
+		case Enemy::EnemyType::THUNDERSNAKE:
+			if (enemyTexture.loadFromFile(thundersnake_texture_path))
+			{
+				enemySprite.setTexture(enemyTexture);
+				scaleEnemySprites();
+			}
 		}
 	}
 

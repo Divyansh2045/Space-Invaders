@@ -14,7 +14,7 @@ namespace Enemy
 		ZAPPER,  
 		SUBZERO, 
 		//UFO,
-		//THUNDERSNAKE
+		THUNDERSNAKE
 	};
 
 	enum class MovementDirection

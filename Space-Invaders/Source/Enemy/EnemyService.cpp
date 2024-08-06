@@ -5,6 +5,7 @@
 #include "../../HeaderFiles/Enemy/Controllers/SubZero.h"
 #include "../../HeaderFiles/Enemy/Controllers/EnemyConfig.h"
 #include "../../HeaderFiles/Enemy/Controllers/Zapper.h"
+#include "../../HeaderFiles/Enemy/Controllers/ThunderSnake.h"
 #include <SFML/Graphics.hpp>
 namespace Enemy {
 	using namespace Global;
@@ -14,7 +15,7 @@ namespace Enemy {
 
 	EnemyService::EnemyService()
 	{
-		
+		std::srand(static_cast<unsigned>(std::time(nullptr)));
 	}
 
 	EnemyService::~EnemyService() {
@@ -84,20 +85,19 @@ namespace Enemy {
 		case Enemy::EnemyType::SUBZERO:
 			return new SubZero(Enemy::EnemyType::SUBZERO);
 			
-
-		/*case Enemy::EnemyType::UFO:
-			return new UFO(Enemy::EnemyType::UFO);
-			
 		case Enemy::EnemyType::THUNDERSNAKE:
 			return new ThunderSnake(Enemy::EnemyType::THUNDERSNAKE);
-			 */
+
+			//case Enemy::EnemyType::UFO:
+		//return new UFO(Enemy::EnemyType::UFO);
+			 
 		
 		}
 	}
 
 	EnemyType EnemyService::getRandomEnemyType()
 	{
-		int randomType = std::rand() % 2;
+		int randomType = std::rand() % 3;
 		return static_cast<Enemy::EnemyType> (randomType);
 	}
 
