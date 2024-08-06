@@ -56,7 +56,7 @@ namespace Enemy
 	{
 		float x_offset_distance = (std::rand() % static_cast<int>(enemyModel->rightScreenSide.x - enemyModel->leftScreenSide.x));
 		float x_position = x_offset_distance + enemyModel->leftScreenSide.x;
-		float y_position = x_offset_distance + enemyModel->leftScreenSide.x;
+		float y_position = enemyModel->leftScreenSide.x;
 
 		return sf::Vector2f(x_position, y_position);
 
