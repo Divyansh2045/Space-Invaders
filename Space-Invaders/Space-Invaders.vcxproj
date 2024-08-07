@@ -133,6 +133,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\Element\Bunker\BunkerController.cpp" />
+    <ClCompile Include="Source\Element\Bunker\BunkerModel.cpp" />
+    <ClCompile Include="Source\Element\Bunker\BunkerService.cpp" />
+    <ClCompile Include="Source\Element\Bunker\BunkerView.cpp" />
+    <ClCompile Include="Source\Element\ElementService.cpp" />
     <ClCompile Include="Source\Enemy\Controllers\SubZero.cpp" />
     <ClCompile Include="Source\Enemy\Controllers\ThunderSnake.cpp" />
     <ClCompile Include="Source\Enemy\Controllers\Zapper.cpp" />
@@ -156,6 +161,10 @@
     <ClCompile Include="Source\UIService\UIService.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HeaderFiles\Element\Bunker\BunkerController.h" />
+    <ClInclude Include="HeaderFiles\Element\Bunker\BunkerModel.h" />
+    <ClInclude Include="HeaderFiles\Element\Bunker\BunkerView.h" />
+    <ClInclude Include="HeaderFiles\Element\ElementService.h" />
     <ClInclude Include="HeaderFiles\Enemy\Controllers\EnemyConfig.h" />
     <ClInclude Include="HeaderFiles\Enemy\Controllers\SubZero.h" />
     <ClInclude Include="HeaderFiles\Enemy\Controllers\ThunderSnake.h" />

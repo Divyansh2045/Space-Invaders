@@ -8,6 +8,7 @@
 #include "../../HeaderFiles/UIService/UIService.h"
 #include "../../HeaderFiles/Enemy/EnemyService.h"
 #include "../../HeaderFiles/Gameplay/GameplayService.h"
+#include "../../HeaderFiles/Element/ElementService.h"
 
 //namespace Main {
 	//class GameService;
@@ -27,6 +28,7 @@
 			UI::UIService* ui_service;
 			Enemy::EnemyService* enemy_service;
 			Gameplay::GameplayService* gameplay_service;
+			Element::ElementService* element_service;
 
 			ServiceLocator();
 			~ServiceLocator();
@@ -49,6 +51,7 @@
 			UI::UIService* GetUIService();
 			Enemy::EnemyService* GetEnemyService();
 			Gameplay::GameplayService* GetGameplayService();
+			Element::ElementService* GetElementService();
 			void deleteServiceLocator();
 
 		};
