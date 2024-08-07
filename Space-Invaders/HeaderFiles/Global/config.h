@@ -3,11 +3,11 @@
 
 namespace Global
 {
-	class config
+	class Config
 	{
 	private:
 
-		static const sf::String outscalLogoTexturePath;
+		static const sf::String outscallogoTexturePath;
 		static const sf::String backgroundTexturePath;
 		static const sf::String playerTexturePath;
 
