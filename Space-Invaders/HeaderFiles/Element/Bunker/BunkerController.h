@@ -4,9 +4,10 @@
 
 namespace Element
 {
-	class BunkerView;
+	
 	namespace Bunker
 	{
+		class BunkerView;
 
 class BunkerController
 
@@ -26,6 +27,7 @@ class BunkerController
 		void render();
 
 		sf::Vector2f getBunkerPosition();
+
 
 };
 	}
