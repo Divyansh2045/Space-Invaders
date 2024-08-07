@@ -14,6 +14,7 @@ namespace Global
 	using namespace Enemy;
 	using namespace Main;
 	using namespace Gameplay;
+	using namespace Element;
 // Initialize the static instance pointer
 ServiceLocator* ServiceLocator::instance = nullptr;
 
@@ -25,6 +26,7 @@ ServiceLocator::ServiceLocator(){
 	ui_service = nullptr;
 	enemy_service = nullptr;
 	gameplay_service = nullptr;
+	element_service = nullptr;
 
 
 	createServices();
@@ -47,6 +49,7 @@ void ServiceLocator::initialize(){
 	ui_service->initialize();
 	enemy_service->initialize();
 	gameplay_service->initialize();
+	element_service->initialize();
 }
 void ServiceLocator::update() {
 	//Keeps on updating services required and updates the game state
@@ -60,6 +63,7 @@ void ServiceLocator::update() {
 		gameplay_service->update();
 		player_service->update();
 		enemy_service->update();
+		element_service->update();
 		
 	}
 	ui_service->update();
@@ -72,6 +76,7 @@ void ServiceLocator::render() {
 		gameplay_service->render();
 		player_service->render();
 		enemy_service->render();
+		element_service->render();
 	
 	}
 	ui_service->render();
@@ -86,7 +91,8 @@ void ServiceLocator::createServices() {
 	ui_service = new UIService();
 	enemy_service = new EnemyService();
 	gameplay_service = new GameplayService();
-
+	element_service = new ElementService();
+		;
 }
 void ServiceLocator::clearAllServices() {
 	delete(graphic_service); // Delete the graphic_service instance
@@ -103,6 +109,8 @@ void ServiceLocator::clearAllServices() {
 	enemy_service = nullptr;
 	delete(gameplay_service);
 	gameplay_service = nullptr;
+	delete(element_service);
+	element_service = nullptr;
 }
 
 // Returns a pointer to the currently set graphic service.
@@ -123,6 +131,11 @@ void ServiceLocator::clearAllServices() {
 	}
 	GameplayService* ServiceLocator::GetGameplayService() {
 		return gameplay_service;
+	}
+
+	ElementService* ServiceLocator::GetElementService()
+	{
+		return element_service;
 	}
 
 
