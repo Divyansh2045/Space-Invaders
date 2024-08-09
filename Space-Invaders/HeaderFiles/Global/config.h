@@ -5,7 +5,7 @@ namespace Global
 {
 	class Config
 	{
-	private:
+	 public:
 
 		static const sf::String outscallogoTexturePath;
 		static const sf::String backgroundTexturePath;

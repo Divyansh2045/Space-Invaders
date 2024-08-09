@@ -1,14 +1,17 @@
 #pragma once
 
 #include "SFML/Audio.hpp"
+
+
 namespace Sound
 {
+	enum class SoundType
+	{
+		BUTTONCLICK
+	};
 	class SoundService
 	{
-		enum class SoundType
-		{
-			BUTTONCLICK
-		};
+		
 
 	private:
 
