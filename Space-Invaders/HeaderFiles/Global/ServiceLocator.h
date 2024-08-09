@@ -9,6 +9,7 @@
 #include "../../HeaderFiles/Enemy/EnemyService.h"
 #include "../../HeaderFiles/Gameplay/GameplayService.h"
 #include "../../HeaderFiles/Element/ElementService.h"
+#include "../../HeaderFiles/Sound/SoundService.h"
 
 //namespace Main {
 	//class GameService;
@@ -29,6 +30,7 @@
 			Enemy::EnemyService* enemy_service;
 			Gameplay::GameplayService* gameplay_service;
 			Element::ElementService* element_service;
+			Sound::SoundService* sound_service;
 
 			ServiceLocator();
 			~ServiceLocator();
@@ -52,6 +54,7 @@
 			Enemy::EnemyService* GetEnemyService();
 			Gameplay::GameplayService* GetGameplayService();
 			Element::ElementService* GetElementService();
+			Sound::SoundService* GetSoundService();
 			void deleteServiceLocator();
 
 		};

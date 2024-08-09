@@ -15,6 +15,7 @@ namespace Global
 	using namespace Main;
 	using namespace Gameplay;
 	using namespace Element;
+	using namespace Sound;
 // Initialize the static instance pointer
 ServiceLocator* ServiceLocator::instance = nullptr;
 
@@ -27,6 +28,7 @@ ServiceLocator::ServiceLocator(){
 	enemy_service = nullptr;
 	gameplay_service = nullptr;
 	element_service = nullptr;
+	sound_service = nullptr;
 
 
 	createServices();
@@ -50,6 +52,7 @@ void ServiceLocator::initialize(){
 	enemy_service->initialize();
 	gameplay_service->initialize();
 	element_service->initialize();
+	sound_service->initialize();
 }
 void ServiceLocator::update() {
 	//Keeps on updating services required and updates the game state
@@ -92,6 +95,7 @@ void ServiceLocator::createServices() {
 	enemy_service = new EnemyService();
 	gameplay_service = new GameplayService();
 	element_service = new ElementService();
+	sound_service = new SoundService();
 		;
 }
 void ServiceLocator::clearAllServices() {
@@ -111,6 +115,8 @@ void ServiceLocator::clearAllServices() {
 	gameplay_service = nullptr;
 	delete(element_service);
 	element_service = nullptr;
+	delete(sound_service);
+	sound_service = nullptr;
 }
 
 // Returns a pointer to the currently set graphic service.
@@ -136,6 +142,11 @@ void ServiceLocator::clearAllServices() {
 	ElementService* ServiceLocator::GetElementService()
 	{
 		return element_service;
+	}
+
+	SoundService* ServiceLocator::GetSoundService()
+	{
+		return sound_service;
 	}
 
 
