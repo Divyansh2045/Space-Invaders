@@ -124,10 +124,12 @@ namespace UI {
 			if (clickedButton(&instructionSprite, mousePosition))
 			{
 				cout << "You are seeing the game instructions " << endl;
+				ServiceLocator::getInstance()->GetSoundService()->playSound(SoundType::BUTTONCLICK);
 			}
 
 			if (clickedButton(&quitButtonSprite, mousePosition))
 			{
+				ServiceLocator::getInstance()->GetSoundService()->playSound(SoundType::BUTTONCLICK);
 				gameWindow->close();
 			}
 			

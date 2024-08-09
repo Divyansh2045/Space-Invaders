@@ -51,7 +51,7 @@ namespace Sound
 		switch (soundType)
 		{
 		case SoundType::BUTTONCLICK:
-			sf::Sound().setBuffer(buttonClick);
+			soundEffects.setBuffer(buttonClick);
 			break;
 		default:
 			cout << "Invalid sound type" << endl;
