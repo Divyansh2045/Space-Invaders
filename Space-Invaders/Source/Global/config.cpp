@@ -31,9 +31,9 @@ namespace Global
 
 	const sf::String Config::laserbulletTexturePath = "assets/textures/laser_bullet.png";
 
-	const sf::String Config::torpedoeTexturePath = "assets/textures/torpedoe.png";
+	const sf::String Config::torpedoTexturePath = "assets/textures/torpedoe.png";
 
-	const sf::String Config::frostbeamTexturePath = "assets/textures/frost_beam.png";
+	const sf::String Config::frostbulletTexturePath = "assets/textures/frost_beam.png";
 
 
 	const sf::String Config::playbuttonTexturePath = "assets/textures/play_button.png";

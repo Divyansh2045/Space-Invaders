@@ -23,8 +23,8 @@ namespace Global
 		static const sf::String outscalbombTexturePath;
 
 		static const sf::String laserbulletTexturePath;
-		static const sf::String torpedoeTexturePath;
-		static const sf::String frostbeamTexturePath;
+		static const sf::String torpedoTexturePath;
+		static const sf::String frostbulletTexturePath;
 
 		static const sf::String playbuttonTexturePath;
 		static const sf::String instructionsbuttonTexturePath;
