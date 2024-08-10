@@ -53,7 +53,7 @@ namespace Bullet
 			}
 			break;
 		case Bullet::BulletType::TORPEDO:
-			if (bulletTexture.loadFromFile(Config::torpedoeTexturePath))
+			if (bulletTexture.loadFromFile(Config::torpedoTexturePath))
 			{
 				bulletSprite.setTexture(bulletTexture);
 				scaleBulletSprite();
@@ -66,7 +66,9 @@ namespace Bullet
 
 	void BulletView::scaleBulletSprite()
 	{
-
+		bulletSprite.setScale(
+			static_cast<float>(bulletSpriteHeight) / bulletSprite.getTexture()->getSize().y,
+			static_cast<float>(bulletSpriteWidth) / bulletSprite.getTexture()->getSize().x);
 	}
 
 
