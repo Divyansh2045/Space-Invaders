@@ -133,7 +133,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\Bullet\BulletController.cpp" />
+    <ClCompile Include="Source\Bullet\BulletModel.cpp" />
     <ClCompile Include="Source\Bullet\BulletService.cpp" />
+    <ClCompile Include="Source\Bullet\BulletView.cpp" />
+    <ClCompile Include="Source\Bullet\Controller\FrostBullet.cpp" />
+    <ClCompile Include="Source\Bullet\Controller\LaserBullet.cpp" />
+    <ClCompile Include="Source\Bullet\Controller\Torpedo.cpp" />
     <ClCompile Include="Source\Element\Bunker\BunkerController.cpp" />
     <ClCompile Include="Source\Element\Bunker\BunkerModel.cpp" />
     <ClCompile Include="Source\Element\Bunker\BunkerService.cpp" />
@@ -164,7 +170,14 @@
     <ClCompile Include="Source\UIService\UIService.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HeaderFiles\Bullet\BulletConfig.h" />
+    <ClInclude Include="HeaderFiles\Bullet\BulletController.h" />
+    <ClInclude Include="HeaderFiles\Bullet\BulletModel.h" />
     <ClInclude Include="HeaderFiles\Bullet\BulletService.h" />
+    <ClInclude Include="HeaderFiles\Bullet\BulletView.h" />
+    <ClInclude Include="HeaderFiles\Bullet\Controllers\FrostBullet.h" />
+    <ClInclude Include="HeaderFiles\Bullet\Controllers\LaserBullet.h" />
+    <ClInclude Include="HeaderFiles\Bullet\Controllers\TorpedoController.h" />
     <ClInclude Include="HeaderFiles\Element\Bunker\BunkerController.h" />
     <ClInclude Include="HeaderFiles\Element\Bunker\BunkerModel.h" />
     <ClInclude Include="HeaderFiles\Element\Bunker\BunkerView.h" />

@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
 #include "../../HeaderFiles/Enemy/Controllers/EnemyConfig.h"
-//#include "../../HeaderFiles/Bullet/BulletConfig.h"
+#include "../../HeaderFiles/Bullet/BulletConfig.h"
 
 namespace Projectile
 {
@@ -11,7 +11,7 @@ namespace Projectile
 	{
 	public:
 
-		virtual void initialize(sf::Vector2f position, /*Bullet::*/MovememtDirection direction) = 0;
+		virtual void initialize(sf::Vector2f position, Bullet::MovementDirection direction) = 0;
 
 		virtual void update() = 0;
 		virtual void render() = 0;
